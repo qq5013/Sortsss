@@ -59,26 +59,34 @@ namespace THOK.AS.Sorting.View
         {
             try
             {
-                int[] quantity = new int[42];
-                object state = null;
-
-                if (channelGroup == "1")
+                int[] quantity = new int[80];
+                for (int i = 0; i < 80; i++)
                 {
-                    state = this.mainFrame.Context.Services["SortPLC"].Read("CheckA");
-                }
-                else
-                {
-                    state = this.mainFrame.Context.Services["SortPLC"].Read("CheckB");
-                }
-
-                if (state is Array)
-                {
-                    Array array = (Array)state;
-                    if (array.Length == 42)
+                    object o = this.mainFrame.Context.Services["SortPLC"].Read("CheckA_" + i);
+                    if (o != null)
                     {
-                        array.CopyTo(quantity, 0);
+                        quantity[i] = Convert.ToInt32(o);
                     }
                 }
+                //object state = null;
+
+                //if (channelGroup == "1")
+                //{
+                //    state = this.mainFrame.Context.Services["SortPLC"].Read("CheckA");
+                //}
+                //else
+                //{
+                //    state = this.mainFrame.Context.Services["SortPLC"].Read("CheckB");
+                //}
+
+                //if (state is Array)
+                //{
+                //    Array array = (Array)state;
+                //    if (array.Length == 80)
+                //    {
+                //        array.CopyTo(quantity, 0);
+                //    }
+                //}
 
                 using (PersistentManager pm = new PersistentManager())
                 {

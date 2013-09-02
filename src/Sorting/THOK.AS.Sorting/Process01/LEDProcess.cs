@@ -84,41 +84,53 @@ namespace THOK.AS.Sorting.Process
 
                         //LED显示盘点数据和卷烟品牌
                         Show("A", false);
-                        Show("B", false);
+                        //Show("B", false);
 
                         break;
                     case "Check"://由盘点按钮事件发出
                         if (!restartState.IsRestart)
                         {
-                            object statea = Context.Services["SortPLC"].Read("CheckA");
-                            if (statea is Array)
+                            //LED显示盘点数据和卷烟品牌
+                            int[] quantity = new int[80];
+
+                            for (int i = 0; i < 80; i++)
                             {
-                                Array array = (Array)statea;
-                                if (array.Length == 42)
+                                object o = Context.Services["SortPLC"].Read("CheckA_" + i);
+                                if (o != null)
                                 {
-                                    //LED显示盘点数据和卷烟品牌
-                                    int[] quantity = new int[42];
-                                    array.CopyTo(quantity, 0);
-                                    Show("A", true, quantity);
+                                    quantity[i] = Convert.ToInt32(o);
                                 }
                             }
-                            object stateb = Context.Services["SortPLC"].Read("CheckB");
-                            if (stateb is Array)
-                            {
-                                Array array = (Array)stateb;
-                                if (array.Length == 42)
-                                {
-                                    //LED显示盘点数据和卷烟品牌
-                                    int[] quantity = new int[42];
-                                    array.CopyTo(quantity, 0);
-                                    Show("B", true, quantity);
-                                }
-                            }
+                            Show("A", true, quantity);
+                            //object stateb = Context.Services["SortPLC"].Read("CheckA");
+                            //if (statea is Array)
+                            //{
+                            //    Array array = (Array)statea;
+                            //    if (array.Length == 80)
+                            //    {
+                            //        //LED显示盘点数据和卷烟品牌
+                            //        int[] quantity = new int[80];
+                            //        array.CopyTo(quantity, 0);
+                            //        Show("A", true, quantity);
+                            //    }
+                            //}
+                            //object stateb = Context.Services["SortPLC"].Read("CheckB");
+                            //if (stateb is Array)
+                            //{
+                            //    Array array = (Array)stateb;
+                            //    if (array.Length == 80)
+                            //    {
+                            //        //LED显示盘点数据和卷烟品牌
+                            //        int[] quantity = new int[80];
+                            //        array.CopyTo(quantity, 0);
+                            //        Show("B", true, quantity);
+                            //    }
+                            //}
                         }
                         else
                         {
                             Show("A", true);
-                            Show("B", true);
+                            //Show("B", true);
                         }
 
                         break;
@@ -142,7 +154,7 @@ namespace THOK.AS.Sorting.Process
 
                         //LED不显示盘点数据，只显示卷烟品牌
                         Show("A", false);
-                        Show("B", false);
+                        //Show("B", false);
 
                         break;
                     case "EmptyErrA":
@@ -162,18 +174,30 @@ namespace THOK.AS.Sorting.Process
 
                             if (!restartState.IsRestart)
                             {
-                                object statea = Context.Services["SortPLC"].Read("CheckA");
-                                if (statea is Array)
+                                //LED显示盘点数据和卷烟品牌
+                                int[] quantity = new int[80];
+
+                                for (int i = 0; i < 80; i++)
                                 {
-                                    Array array = (Array)statea;
-                                    if (array.Length == 42)
+                                    object o = Context.Services["SortPLC"].Read("CheckA_" + i);
+                                    if (o != null)
                                     {
-                                        //LED显示盘点数据和卷烟品牌
-                                        int[] quantity = new int[42];
-                                        array.CopyTo(quantity, 0);
-                                        Show("A", true, quantity);
+                                        quantity[i] = Convert.ToInt32(o);
                                     }
                                 }
+                                Show("A", true, quantity);
+                                //object statea = Context.Services["SortPLC"].Read("CheckA");
+                                //if (statea is Array)
+                                //{
+                                //    Array array = (Array)statea;
+                                //    if (array.Length == 80)
+                                //    {
+                                //        //LED显示盘点数据和卷烟品牌
+                                //        int[] quantity = new int[80];
+                                //        array.CopyTo(quantity, 0);
+                                //        Show("A", true, quantity);
+                                //    }
+                                //}
                             }
                             else
                                 Show("A", true);
@@ -202,10 +226,10 @@ namespace THOK.AS.Sorting.Process
                                 if (stateb is Array)
                                 {
                                     Array array = (Array)stateb;
-                                    if (array.Length == 42)
+                                    if (array.Length == 80)
                                     {
                                         //LED显示盘点数据和卷烟品牌
-                                        int[] quantity = new int[42];
+                                        int[] quantity = new int[80];
                                         array.CopyTo(quantity, 0);
                                         Show("B", true, quantity);
                                     }
@@ -268,23 +292,27 @@ namespace THOK.AS.Sorting.Process
                 {
                     ChannelDao channelDao = new ChannelDao();
                     DataTable channelTableA = channelDao.FindLastSortNo(1);//获取A线烟道
-                    DataTable channeltableB = channelDao.FindLastSortNo(2);//获取B线烟道
+                    //DataTable channeltableB = channelDao.FindLastSortNo(2);//获取B线烟道
 
-                    int[] channelDataA = new int[42];
-                    int[] channelDataB = new int[42];
+                    int[] channelDataA = new int[80];
+                    //int[] channelDataB = new int[80];
 
                     for (int i = 0; i < channelTableA.Rows.Count; i++)
                     {
                         channelDataA[Convert.ToInt32(channelTableA.Rows[i]["CHANNELADDRESS"]) - 1] = Convert.ToInt32(channelTableA.Rows[i]["SORTNO"]);
                     }
 
-                    for (int i = 0; i < channeltableB.Rows.Count; i++)
-                    {
-                        channelDataB[Convert.ToInt32(channeltableB.Rows[i]["CHANNELADDRESS"]) - 1] = Convert.ToInt32(channeltableB.Rows[i]["SORTNO"]);
-                    }
+                    //for (int i = 0; i < channeltableB.Rows.Count; i++)
+                    //{
+                    //    channelDataB[Convert.ToInt32(channeltableB.Rows[i]["CHANNELADDRESS"]) - 1] = Convert.ToInt32(channeltableB.Rows[i]["SORTNO"]);
+                    //}
 
-                    WriteToService("SortPLC", "ChannelDataA", channelDataA);
-                    WriteToService("SortPLC", "ChannelDataB", channelDataB);
+                    for (int i = 0; i < 80; i++)
+                    {
+                        WriteToService("SortPLC", "ChannelDataA_" + i.ToString(), channelDataA[i]);
+                    }
+                    //WriteToService("SortPLC", "ChannelDataA", channelDataA);
+                    //WriteToService("SortPLC", "ChannelDataB", channelDataB);
                 }
             }
             catch (Exception e)

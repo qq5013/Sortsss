@@ -16,7 +16,7 @@ namespace THOK.AS.Sorting.Process
         {
             try
             {
-                WriteToProcess("CacheOrderProcess", "CacheOrderSortNoes", null);
+                //WriteToProcess("CacheOrderProcess", "CacheOrderSortNoes", null);
                 
                 object o = ObjectUtil.GetObject(stateItem.State);
                 if (o != null)

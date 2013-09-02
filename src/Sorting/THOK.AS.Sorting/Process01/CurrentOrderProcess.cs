@@ -94,7 +94,7 @@ namespace THOK.AS.Sorting.Process
                     refreshData.Average = orderDao.FindSortingAverage();
 
                     WriteToProcess("sortingStatus", "RefreshData", refreshData);
-                    messageUtil.SendToSortLed(sortNo, refreshData);
+                    //messageUtil.SendToSortLed(sortNo, refreshData);
                 }
             }
             catch (Exception e)

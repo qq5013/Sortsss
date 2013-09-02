@@ -34,7 +34,7 @@ namespace THOK.AS.Sorting.View
             if (sortnoDialog.ShowDialog() == DialogResult.OK)
             {
                 dgvMain.DataSource = channelDal.GetChannel(sortnoDialog.SortNo, channelGroup);
-                channelGroup = channelGroup == "A" ? "B" : "A";
+                //channelGroup = channelGroup == "A" ? "B" : "A";
             }
             else
             {

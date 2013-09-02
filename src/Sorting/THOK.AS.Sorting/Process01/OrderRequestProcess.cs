@@ -96,10 +96,15 @@ namespace THOK.AS.Sorting.Process
                                 orderData[95] = endSortNo == sortNo ? 1 : 0;
                                 //完成标志
                                 orderData[96] = 1;
-                                if (WriteToService("SortPLC", "OrderData" + channelGroup, orderData))
+
+                                if (WriteToPLC("SortPLC", "OrderData" + channelGroup, orderData))
                                 {
                                     orderDao.UpdateOrderStatus(sortNo, "1", channelGroup);
                                     Logger.Info(string.Format(channelGroup + " 线 写订单数据成功,分拣订单号[{0}]。", sortNo));
+                                }
+                                else
+                                {
+                                    Logger.Error(" 订单数据写入PLC失败！");
                                 }
                             }
                         }
@@ -113,6 +118,22 @@ namespace THOK.AS.Sorting.Process
             catch (Exception ee)
             {
                 Logger.Error(string.Format("分拣订单请求操作失败！原因：{0}！ {1}", ee.Message, "OrderRequestProcess.cs 行号：108！"));
+            }
+        }
+
+        private bool WriteToPLC(string plcName, string plcItemName, int[] orderData)
+        {
+            try
+            {
+                for (int i = 0; i < orderData.Length - 1; i++)
+                {
+                    WriteToService(plcName, plcItemName + "_" + i.ToString(), orderData[i]);
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }

@@ -175,13 +175,10 @@ namespace THOK.AS.Sorting.View
                             serverDao.UpdateBatchStatus(batchID, lineCode);
 
                             Logger.Info("数据下载完成");
-                            //Context.ProcessDispatcher.WriteToProcess("LEDProcess", "NewData", null);
-                            Context.ProcessDispatcher.WriteToProcess("LEDProcess", "zz_NewData", null);
+                            Context.ProcessDispatcher.WriteToProcess("LEDProcess", "NewData", null);
                             Context.ProcessDispatcher.WriteToProcess("CreatePackAndPrintDataProcess", "NewData", null);
                             Context.ProcessDispatcher.WriteToProcess("CurrentOrderProcess", "CurrentOrderA", new int[] { -1 });
-                            Context.ProcessDispatcher.WriteToProcess("CurrentOrderProcess", "CurrentOrderB", new int[] { -1 });
                             Context.ProcessDispatcher.WriteToProcess("monitorView", "ProgressState", new ProgressState());
-                            Context.ProcessDispatcher.WriteToProcess("SortingOrderProcess", "OrderInfo", new string[] { orderDate ,batchNo });
                         }
                         else
                             MessageBox.Show("没有需要分拣的订单数据。", "消息", MessageBoxButtons.OK, MessageBoxIcon.Information);

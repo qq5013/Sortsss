@@ -78,7 +78,6 @@
   <ItemGroup>
     <Compile Include="Dal\UploadDataDal.cs" />
     <Compile Include="Dao\UploadDataDao.cs" />
-    <Compile Include="Process01\ExportPackNoProcess.cs" />
     <Compile Include="Report\ChannelCheckDataSet.cs">
       <DependentUpon>ChannelCheckDataSet.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -94,16 +93,13 @@
     <Compile Include="Dao\SortStatusDao.cs" />
     <Compile Include="Dao\StockDao.cs" />
     <Compile Include="Parameter.cs" />
-    <Compile Include="Process01\CacheOrderProcess.cs" />
-    <Compile Include="Process01\CreatePackAndPrintDataProcess.cs" />
-    <Compile Include="Process01\LEDProcess.cs" />
-    <Compile Include="Process01\MissOrderProcess.cs" />
-    <Compile Include="Process01\OrderRequestProcess.cs" />
-    <Compile Include="Process01\CurrentOrderProcess.cs" />
-    <Compile Include="Process01\SortingOrderProcess.cs" />
-    <Compile Include="Process01\SortRunStatusProcess.cs" />
-    <Compile Include="Process02\ViewProcess.cs" />
-    <Compile Include="Process01\SortStatusProcess.cs" />
+    <Compile Include="Process\CreatePackAndPrintDataProcess.cs" />
+    <Compile Include="Process\LEDProcess.cs" />
+    <Compile Include="Process\MissOrderProcess.cs" />
+    <Compile Include="Process\OrderRequestProcess.cs" />
+    <Compile Include="Process\CurrentOrderProcess.cs" />
+    <Compile Include="Process\SortRunStatusProcess.cs" />
+    <Compile Include="Process\SortStatusProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -133,7 +129,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SortDBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Util\DataStruct.cs" />
     <Compile Include="Util\EQ2008_DataStruct.cs" />
     <Compile Include="Util\GraphicsUtil.cs" />
     <Compile Include="Util\LED2008.cs" />
