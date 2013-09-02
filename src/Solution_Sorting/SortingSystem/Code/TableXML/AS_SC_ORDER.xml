@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE name="AS_SC_ORDER" ChineseName="批次补货单" PrimaryKey="SORTID" OrderBy="SORTID" 
+       ViewName="AS_SC_ORDER" IsDisplayOpColumn="F" OpColumnWidth="50">
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>SORTNO</FieldName>
+		<FieldTitle>配送总顺序</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_SORTID</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>100</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>LINECODE</FieldName>
+		<FieldTitle>分拣线代码</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_LINECODE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>100</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>BATCHNO</FieldName>
+		<FieldTitle>批次</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_BATCHNO</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>100</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>ORDERID</FieldName>
+		<FieldTitle>订单号</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_ORDERID</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>100</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>ORDERDATE</FieldName>
+		<FieldTitle>调度日期</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_ORDERDATE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>100</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>CIGARETTECODE</FieldName>
+		<FieldTitle>卷烟代码</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_CIGARETTECODE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>100</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>CIGARETTENAME</FieldName>
+		<FieldTitle>卷烟名称</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_CIGARETTENAME</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>200</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>CHANNELCODE</FieldName>
+		<FieldTitle>烟道代码</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_CHANNELCODE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>100</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>QUANTITY</FieldName>
+		<FieldTitle>总条数</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_QUANTITY</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>100%</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+</TABLE>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE name="AS_BI_CONTAINER" ChineseName="容器信息表" PrimaryKey="CONTAINERID" OrderBy="CONTAINERID" 
+       ViewName="AS_BI_CONTAINER" IsDisplayOpColumn="T" OpColumnWidth="90">
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>CONTAINERID</FieldName>
+    <FieldTitle>容器编号</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>CONTAINERNAME</FieldName>
+    <FieldTitle>容器名称</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>QUANTITY</FieldName>
+    <FieldTitle>容器容量</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>STATUS</FieldName>
+    <FieldTitle>状态</FieldTitle>
+    <Width>100%</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+</TABLE>

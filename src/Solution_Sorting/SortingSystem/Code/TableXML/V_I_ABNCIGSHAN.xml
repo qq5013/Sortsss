@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+ <TABLE name="V_I_ABNCIGSHAN" ChineseName="异型烟送货单" PrimaryKey="ROUTECODE" OrderBy="ROUTECODE" ViewName="V_I_ABNCIGSHAN" IsDisplayOpColumn="F" OpColumnWidth="65">
+- <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+  <FieldName>CUSTOMERCODE</FieldName> 
+  <FieldTitle>客户代码</FieldTitle> 
+  <DataType>string</DataType> 
+  <DefaultValue /> 
+  <ControlID>txt_CUSTOMERCODE</ControlID> 
+  <ControlType>TextBox</ControlType> 
+  <Width>70</Width> 
+  <HeadTextHeight /> 
+  <ItemHeight /> 
+  <Validate NotNull="" onfocus="" onblur="" /> 
+  </FIELD>
+- <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+  <FieldName>CUSTOMERNAME</FieldName> 
+  <FieldTitle>客户名称</FieldTitle> 
+  <DataType>string</DataType> 
+  <DefaultValue /> 
+  <ControlID>txt_CUSTOMERNAME</ControlID> 
+  <ControlType>TextBox</ControlType> 
+  <Width>200</Width> 
+  <HeadTextHeight /> 
+  <ItemHeight /> 
+  <Validate NotNull="" onfocus="" onblur="" /> 
+  </FIELD>
+- <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+  <FieldName>ROUTECODE</FieldName> 
+  <FieldTitle>线路代码</FieldTitle> 
+  <DataType>string</DataType> 
+  <DefaultValue /> 
+  <ControlID>txt_ROUTERCODE</ControlID> 
+  <ControlType>TextBox</ControlType> 
+  <Width>70</Width> 
+  <HeadTextHeight /> 
+  <ItemHeight /> 
+  <Validate NotNull="" onfocus="" onblur="" /> 
+  </FIELD>
+- <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+  <FieldName>ROUTENAME</FieldName> 
+  <FieldTitle>线路名称</FieldTitle> 
+  <DataType>string</DataType> 
+  <DefaultValue /> 
+  <ControlID>txt_ROUTENAME</ControlID> 
+  <ControlType>TextBox</ControlType> 
+  <Width>150</Width> 
+  <HeadTextHeight /> 
+  <ItemHeight /> 
+  <Validate NotNull="" onfocus="" onblur="" /> 
+  </FIELD>
+- <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+  <FieldName>CIGARETTECODE</FieldName> 
+  <FieldTitle>卷烟代码</FieldTitle> 
+  <DataType>string</DataType> 
+  <DefaultValue /> 
+  <ControlID>txt_CIGARETTECODE</ControlID> 
+  <ControlType>TextBox</ControlType> 
+  <Width>60</Width> 
+  <HeadTextHeight /> 
+  <ItemHeight /> 
+  <Validate NotNull="" onfocus="" onblur="" /> 
+  </FIELD>
+- <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+  <FieldName>CIGARETTENAME</FieldName> 
+  <FieldTitle>卷烟名称</FieldTitle> 
+  <DataType>string</DataType> 
+  <DefaultValue /> 
+  <ControlID>txt_CIGARETTENAME</ControlID> 
+  <ControlType>TextBox</ControlType> 
+  <Width>120</Width> 
+  <HeadTextHeight /> 
+  <ItemHeight /> 
+  <Validate NotNull="" onfocus="" onblur="" /> 
+  </FIELD>
+- <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+  <FieldName>QUANTITY</FieldName> 
+  <FieldTitle>卷烟数量</FieldTitle> 
+  <DataType>string</DataType> 
+  <DefaultValue /> 
+  <td align="right" /> 
+  <ControlID>txt_QUANTITY</ControlID> 
+  <ControlType>TextBox</ControlType> 
+  <Width>60</Width> 
+  <HeadTextHeight /> 
+  <ItemHeight /> 
+  <Validate NotNull="" onfocus="" onblur="" /> 
+  </FIELD>
+- <FIELD DisplayWhenSelect="F" DisplayWhenQuery="F" DisplayWhenEdit="F" HIDDEN="T">
+  <FieldName>ORDERDATE</FieldName> 
+  <FieldTitle>销售日期</FieldTitle> 
+  <DataType>string</DataType> 
+  <DefaultValue /> 
+  <ControlID>txt_ORDERDATE</ControlID> 
+  <ControlType>TextBox</ControlType> 
+  <Width>100</Width> 
+  <HeadTextHeight /> 
+  <ItemHeight /> 
+  <Validate NotNull="" onfocus="" onblur="" /> 
+  </FIELD>
+- <FIELD DisplayWhenSelect="F" DisplayWhenQuery="F" DisplayWhenEdit="F" HIDDEN="T">
+  <FieldName>SIGN</FieldName> 
+  <FieldTitle>收货确认</FieldTitle> 
+  <DataType>string</DataType> 
+  <DefaultValue /> 
+  <ControlID>txt_OSIGN</ControlID> 
+  <ControlType>TextBox</ControlType> 
+  <Width>100</Width> 
+  <HeadTextHeight /> 
+  <ItemHeight /> 
+  <Validate NotNull="" onfocus="" onblur="" /> 
+  </FIELD>
+  </TABLE>

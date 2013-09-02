@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE name="V_AS_BK_CHANNELUSED" ChineseName="烟道维护表" PrimaryKey="CHANNELID" OrderBy="CHANNELID" 
+       ViewName="V_AS_BK_CHANNELUSED" IsDisplayOpColumn="F" OpColumnWidth="50">
+
+	<FIELD DisplayWhenSelect="F" DisplayWhenQuery="F" DisplayWhenEdit="F" HIDDEN="F">
+		<FieldName>CHANNELID</FieldName>
+		<FieldTitle>烟道ID</FieldTitle>
+		<Width>100</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_CHANNELID</ControlID>
+		<ControlType>TextBox</ControlType>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>CHANNELCODE</FieldName>
+		<FieldTitle>烟道代码</FieldTitle>
+		<Width>60</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_CHANNELCODE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>CHANNELNAME</FieldName>
+		<FieldTitle>烟道名称</FieldTitle>
+		<Width>60</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_CHANNELNAME</ControlID>
+		<ControlType>TextBox</ControlType>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>LINECODE</FieldName>
+		<FieldTitle>分拣线代码</FieldTitle>
+		<Width>75</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_LINECODE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>CIGARETTECODE</FieldName>
+		<FieldTitle>卷烟代码</FieldTitle>
+		<Width>60</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_CIGARETTECODE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>CIGARETTENAME</FieldName>
+		<FieldTitle>卷烟名称</FieldTitle>
+		<Width>100%</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_CIGARETTENAME</ControlID>
+		<ControlType>TextBox</ControlType>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>QUANTITY</FieldName>
+		<FieldTitle>分拣条数</FieldTitle>
+		<Width>60</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_QUANTITY</ControlID>
+		<ControlType>TextBox</ControlType>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>CHANNELTYPE</FieldName>
+		<FieldTitle>烟道类型</FieldTitle>
+		<Width>60</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_CHANNELTYPE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>GROUPNO</FieldName>
+		<FieldTitle>组编号</FieldTitle>
+		<Width>100</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_GROUPNO</ControlID>
+		<ControlType>TextBox</ControlType>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	
+	<FIELD DisplayWhenSelect="F" DisplayWhenQuery="F" DisplayWhenEdit="F" HIDDEN="F">
+		<FieldName>ORDERDATE</FieldName>
+		<FieldTitle>调度日期</FieldTitle>
+		<Width>100</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_ORDERDATE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="F" DisplayWhenQuery="F" DisplayWhenEdit="F" HIDDEN="F">
+		<FieldName>BATCHNO</FieldName>
+		<FieldTitle>批次号</FieldTitle>
+		<Width>100</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_BATCHNO</ControlID>
+		<ControlType>TextBox</ControlType>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	
+</TABLE>

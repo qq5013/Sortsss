@@ -1,0 +1,125 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{90EDBDA6-ECFE-4121-8748-97FC13A9196B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>THOK.AS</RootNamespace>
+    <AssemblyName>THOK.AS</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="THOK.Util, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\THOK.Util.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dal\AreaDal.cs" />
+    <Compile Include="Dal\BatchDal.cs" />
+    <Compile Include="Dal\ChannelDal.cs" />
+    <Compile Include="Dal\ChannelScheduleDal.cs" />
+    <Compile Include="Dal\CigaretteDal.cs" />
+    <Compile Include="Dal\CustomerDal.cs" />
+    <Compile Include="Dal\DepartmentDal.cs" />
+    <Compile Include="Dal\DialogDataDal.cs" />
+    <Compile Include="Dal\EmployeeDal.cs" />
+    <Compile Include="Dal\HandleSortOrderDal.cs" />
+    <Compile Include="Dal\RouteDal.cs" />
+    <Compile Include="Dal\LineInfoDal.cs" />
+    <Compile Include="Dal\AbnormityCigaretteDal.cs" />
+    <Compile Include="Dal\OrderDal.cs" />
+    <Compile Include="Dal\OrderScheduleDal.cs" />
+    <Compile Include="Dal\LineScheduleDal.cs" />
+    <Compile Include="Dal\ParameterDal.cs" />
+    <Compile Include="Dal\StockChannelDal.cs" />
+    <Compile Include="Dal\SysUserDal.cs" />
+    <Compile Include="Dal\SysGroupDal.cs" />
+    <Compile Include="Dal\SysParameterDal.cs" />
+    <Compile Include="Dal\UploadSortingDal.cs" />
+    <Compile Include="Dao\AbnormityCigaretteDao.cs" />
+    <Compile Include="Dao\AreaDao.cs" />
+    <Compile Include="Dao\BatchDao.cs" />
+    <Compile Include="Dao\ChannelDao.cs" />
+    <Compile Include="Dao\ChannelScheduleDao.cs" />
+    <Compile Include="Dao\CigaretteDao.cs" />
+    <Compile Include="Dao\CustomerDao.cs" />
+    <Compile Include="Dao\DepartmentDao.cs" />
+    <Compile Include="Dao\EmployeeDao.cs" />
+    <Compile Include="Dao\HandleSortOrderDao.cs" />
+    <Compile Include="Dao\HandleSupplyDao.cs" />
+    <Compile Include="Dao\LineDeviceDao.cs" />
+    <Compile Include="Dao\OrderScheduleDao.cs" />
+    <Compile Include="Dao\RouteDao.cs" />
+    <Compile Include="Dao\LineInfoDao.cs" />
+    <Compile Include="Dao\SalesSystemDao.cs" />
+    <Compile Include="Dao\ScOrderDao.cs" />
+    <Compile Include="Dao\StockChannelDao.cs" />
+    <Compile Include="Dao\SupplyDao.cs" />
+    <Compile Include="Dao\SysConfigPlanDao.cs" />
+    <Compile Include="Dao\SysGroupDao.cs" />
+    <Compile Include="Dao\SysOperatorLogDao.cs" />
+    <Compile Include="Dao\SysParameterDao.cs" />
+    <Compile Include="Dao\SysSelectDialogDao.cs" />
+    <Compile Include="Dao\SysSystemParameterDao.cs" />
+    <Compile Include="Dao\SysUserConfigPlanDao.cs" />
+    <Compile Include="Dao\SysUserDao.cs" />
+    <Compile Include="Dao\LineScheduleDao.cs" />
+    <Compile Include="Dao\OrderDao.cs" />
+    <Compile Include="Dao\PalletDao.cs" />
+    <Compile Include="Dao\UploadSortingDao.cs" />
+    <Compile Include="Schedule\DownLoadData.cs" />
+    <Compile Include="Schedule\HashTableHandle.cs" />
+    <Compile Include="Schedule\ProcessState.cs" />
+    <Compile Include="Schedule\ScheduleEventArgs.cs" />
+    <Compile Include="Schedule\AutoSchedule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schedule\UploadData.cs" />
+    <Compile Include="Schedule\UploadSortingData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\THOK.Optimize\THOK.Optimize.csproj">
+      <Project>{B0AC8947-EB5A-4A14-8C29-346040BCCC58}</Project>
+      <Name>THOK.Optimize</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Connections>
+  <Connection Name="DefaultConnection" DatabaseType="SQLSERVER">
+    <ConnectionString Value="server=.;database=Logistics;uid=sa;" />
+    <Password Name="password" Value="65CED0851FFD283F" />
+  </Connection>
+  <Connection Name="OldConnection" DatabaseType="SQLSERVER">
+    <ConnectionString Value="server=10.66.97.250;database=ngphnamw;uid=hnamw;" />
+    <Password Name="password" Value="96C77EEAE00CF241" />
+  </Connection>
+  <Connection Name="OuterConnection" DatabaseType="DB2">
+    <ConnectionString Value="server=10.89.104.20:60000;database=NCYXTD;uid=oukang;" />
+    <Password Name="password" Value="9E3A36473F09F36E" />
+  </Connection>
+  <Connection Name="DB2Connection" DatabaseType="DB2">
+    <ConnectionString Value="server=10.66.97.230:50000;database=TRADECTR;uid=ic;" />
+    <Password Name="password" Value="76CBF27DE3DFFA09740A8CDF7192058B" />
+  </Connection>
+</Connections>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE name="AS_BK_ORDERMASTER" ChineseName="订单主表备份表" PrimaryKey="ORDERID" OrderBy="ORDERID" 
+       ViewName="V_AS_BK_DELIVERYLIST" IsDisplayOpColumn="T" OpColumnWidth="50">
+
+	<FIELD DisplayWhenSelect="F" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>AREACODE</FieldName>
+		<FieldTitle>销售部代码</FieldTitle>
+		<Width>80</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+
+		<DataType></DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID></ControlID>
+		<ControlType></ControlType>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>AREANAME</FieldName>
+		<FieldTitle>销售部名称</FieldTitle>
+		<Width>200</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<DataType></DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID></ControlID>
+		<ControlType></ControlType>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>ROUTECODE</FieldName>
+		<FieldTitle>配送线代码</FieldTitle>
+		<Width>80</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<DataType></DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID></ControlID>
+		<ControlType></ControlType>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>ROUTENAME</FieldName>
+		<FieldTitle>配送线名称</FieldTitle>
+		<Width>100%</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<DataType></DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID></ControlID>
+		<ControlType></ControlType>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+
+</TABLE>

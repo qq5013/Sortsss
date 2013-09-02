@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE name="AS_SC_PALLETMASTER" ChineseName="托盘分配主表" PrimaryKey="SORTNO" OrderBy="SORTNO" 
+       ViewName="AS_SC_PALLETMASTER"  IsDisplayOpColumn="T" OpColumnWidth="65">
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>SORTNO</FieldName>
+    <FieldTitle>分拣流水号</FieldTitle>
+    <Width>80</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>int</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_SORTNO</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>BATCHNO</FieldName>
+    <FieldTitle>批次</FieldTitle>
+    <Width>80</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_BATCHNO</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>ORDERDATE</FieldName>
+    <FieldTitle>分拣日期</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>DateTime</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_ORDERDATE</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>LINECODE</FieldName>
+    <FieldTitle>分拣线代码</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_LINECODE</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>ORDERID</FieldName>
+    <FieldTitle>订单号</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_ORDERID</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>AREACODE</FieldName>
+    <FieldTitle>销售部代码</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_AREACODE</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>AREANAME</FieldName>
+    <FieldTitle>销售部名称</FieldTitle>
+    <Width>150</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_AREANAME</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>ROUTECODE</FieldName>
+    <FieldTitle>线路代码</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_ROUTECODE</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>ROUTENAME</FieldName>
+    <FieldTitle>线路名称</FieldTitle>
+    <Width>150</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_ROUTENAME</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>CUSTOMERCODE</FieldName>
+    <FieldTitle>客户代码</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_CUSTOMERCODE</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>CUSTOMERNAME</FieldName>
+    <FieldTitle>客户名称</FieldTitle>
+    <Width>200</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_CUSTOMERNAME</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>LICENSENO</FieldName>
+    <FieldTitle>专卖证号</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_LICENSENO</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>TQUANTITY</FieldName>
+    <FieldTitle>分拣总条数</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>int</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_TQUANTITY</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>QUANTITY</FieldName>
+    <FieldTitle>分拣条数</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>int</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_QUANTITY</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>PQUANTITY</FieldName>
+    <FieldTitle>托盘数</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>int</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_PQUANTITY</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>ORDERNO</FieldName>
+    <FieldTitle>托盘序号</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>int</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_ORDERNO</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>EXPORTNO</FieldName>
+    <FieldTitle>出口代号</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>int</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_EXPORTNO</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>FINISHEDTIME</FieldName>
+    <FieldTitle>完成时间</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType>DateTime</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_FINISHEDTIME</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+</TABLE>

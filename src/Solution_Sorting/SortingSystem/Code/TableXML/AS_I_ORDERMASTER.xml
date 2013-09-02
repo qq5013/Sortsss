@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE name="AS_I_ORDERMASTER" ChineseName="定单主表" PrimaryKey="ORDERID" OrderBy="ORDERID" 
+       ViewName="AS_I_ORDERMASTER" IsDisplayOpColumn="T" OpColumnWidth="30">
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>ORDERID</FieldName>
+    <FieldTitle>订单号</FieldTitle>
+    <Width>110</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>AREACODE</FieldName>
+    <FieldTitle>销售部代码</FieldTitle>
+    <Width>80</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>AREANAME</FieldName>
+    <FieldTitle>销售部名称</FieldTitle>
+    <Width>150</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>ROUTECODE</FieldName>
+    <FieldTitle>线路代码</FieldTitle>
+    <Width>80</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>ROUTENAME</FieldName>
+    <FieldTitle>线路名称</FieldTitle>
+    <Width>150</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>CUSTOMERCODE</FieldName>
+    <FieldTitle>客户代码</FieldTitle>
+    <Width>85</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>CUSTOMERNAME</FieldName>
+    <FieldTitle>客户名称</FieldTitle>
+    <Width>200</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+</TABLE>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE name="AS_BI_DEPARTMENT" ChineseName="部门信息表" PrimaryKey="DEPARTMENTID" OrderBy="DEPARTMENTID" 
+       ViewName="AS_BI_DEPARTMENT" IsDisplayOpColumn="T" OpColumnWidth="65">
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="T">
+    <FieldName>DEPARTMENTID</FieldName>
+    <FieldTitle>部门ID</FieldTitle>
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_DEPARTMENTID</ControlID>
+    <ControlType>TextBox</ControlType>
+	<Width>0</Width>
+	<HeadTextHeight></HeadTextHeight>
+	<ItemHeight></ItemHeight>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>DEPARTMENTNAME</FieldName>
+    <FieldTitle>部门名称</FieldTitle>
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_DEPARTMENTNAME</ControlID>
+    <ControlType>TextBox</ControlType>
+	<Width>200</Width>
+	<HeadTextHeight></HeadTextHeight>
+	<ItemHeight></ItemHeight>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+
+<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+	<FieldName>REMARK</FieldName>
+	<FieldTitle>部门描述</FieldTitle>
+	<DataType>string</DataType>
+	<DefaultValue></DefaultValue>
+	<ControlID></ControlID>
+	<ControlType></ControlType>
+	<Width>100%</Width>
+	<HeadTextHeight></HeadTextHeight>
+	<ItemHeight></ItemHeight>
+	<Validate NotNull="" onfocus="" onblur=""></Validate>
+</FIELD>
+</TABLE>
+

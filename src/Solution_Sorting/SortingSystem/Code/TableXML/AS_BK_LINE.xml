@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE name="AS_BK_LINE" ChineseName="分拣线分拣信息" PrimaryKey="ROUTECODE" OrderBy="LINECODE,ROUTECODE" 
+       ViewName="AS_BK_LINE" IsDisplayOpColumn="F" OpColumnWidth="65">
+
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>LINECODE</FieldName>
+		<FieldTitle>分拣线代码</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_STATUS</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>70</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>AREACODE</FieldName>
+		<FieldTitle>销售部代码</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_REMARK</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>80</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>AREANAME</FieldName>
+		<FieldTitle>销售部名称</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_REMARK</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>200</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>ROUTECODE</FieldName>
+		<FieldTitle>配送线代码</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_REMARK</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>80</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>ROUTENAME</FieldName>
+		<FieldTitle>配送线名称</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_REMARK</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>100%</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+
+</TABLE>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE name="V_AS_BK_ORDERDETAIL" ChineseName="定单从表" PrimaryKey="ORDERID" OrderBy="ORDERID" 
+       ViewName="V_AS_BK_ORDERDETAIL" IsDisplayOpColumn="F" OpColumnWidth="65">
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>ORDERID</FieldName>
+		<FieldTitle>订单号</FieldTitle>
+		<Width>110</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<DataType></DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID></ControlID>
+		<ControlType></ControlType>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>CIGARETTECODE</FieldName>
+		<FieldTitle>卷烟代码</FieldTitle>
+		<Width>80</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+
+		<DataType></DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID></ControlID>
+		<ControlType></ControlType>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>CIGARETTENAME</FieldName>
+		<FieldTitle>卷烟名称</FieldTitle>
+		<Width>280</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+
+		<DataType></DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID></ControlID>
+		<ControlType></ControlType>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>AREACODE</FieldName>
+		<FieldTitle>销售部代码</FieldTitle>
+		<Width>90</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+
+		<DataType></DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID></ControlID>
+		<ControlType></ControlType>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>AREANAME</FieldName>
+		<FieldTitle>销售部名称</FieldTitle>
+		<Width>220</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+
+		<DataType></DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID></ControlID>
+		<ControlType></ControlType>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>QUANTITY</FieldName>
+		<FieldTitle>总条数</FieldTitle>
+		<Width>50</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+
+		<DataType></DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID></ControlID>
+		<ControlType></ControlType>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>SQUANTITY</FieldName>
+		<FieldTitle>件数</FieldTitle>
+		<Width>40</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+
+		<DataType></DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID></ControlID>
+		<ControlType></ControlType>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>BQUANTITY</FieldName>
+		<FieldTitle>零条数</FieldTitle>
+		<Width>100%</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+
+		<DataType></DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID></ControlID>
+		<ControlType></ControlType>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+</TABLE>

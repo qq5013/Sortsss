@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Connections>
+  <Connection Name="DefaultConnection" DatabaseType="SQLSERVER">
+    <ConnectionString Value="server=THOK601\SQLEXPRESS;database=NewLogistics;uid=sa;" />
+    <Password Name="password" Value="65CED0851FFD283F" />
+  </Connection>
+  <Connection Name="OutConnection" DatabaseType="SQLSERVER">
+    <ConnectionString Value="server=THOK601\SQLEXPRESS;database=LocalDB;uid=sa;" />
+    <Password Name="password" Value="65CED0851FFD283F" />
+  </Connection>
+</Connections>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE name="V_AS_BI_EMPLOYEE" ChineseName="员工信息" PrimaryKey="EMPLOYEEID" OrderBy="EMPLOYEEID" 
+       ViewName="V_AS_BI_EMPLOYEE" IsDisplayOpColumn="T" OpColumnWidth="65">
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>EMPLOYEEID</FieldName>
+		<FieldTitle>员工ID</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_EMPLOYEEID</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>0</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>EMPLOYEECODE</FieldName>
+		<FieldTitle>员工代码</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_EMPLOYEECODE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>100</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>EMPLOYEENAME</FieldName>
+		<FieldTitle>员工姓名</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_EMPLOYEENAME</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>120</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>DEPARTMENTID</FieldName>
+		<FieldTitle>部门ID</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_DEPARTMENTID</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>0</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>DEPARTMENTNAME</FieldName>
+		<FieldTitle>部门名称</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_DEPARTMENTNAME</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>200</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>STATUS</FieldName>
+		<FieldTitle>状态</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_STATUS</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>60</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>REMARK</FieldName>
+		<FieldTitle>备注</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_REMARK</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>100%</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+</TABLE>

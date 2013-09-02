@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE name="AS_I_CIGARETTE" ChineseName="接口—卷烟信息表" PrimaryKey="CIGARETTECODE" OrderBy="CIGARETTECODE" 
+       ViewName="AS_I_CIGARETTE" IsDisplayOpColumn="F" OpColumnWidth="50">
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>CIGARETTECODE</FieldName>
+    <FieldTitle>卷烟编号</FieldTitle>
+    <Width>75</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+    
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>CIGARETTENAME</FieldName>
+    <FieldTitle>卷烟名称</FieldTitle>
+    <Width>100%</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>ISABNORMITY</FieldName>
+    <FieldTitle>异形烟</FieldTitle>
+    <Width>50</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+	<FieldName>BARCODE</FieldName>
+	<FieldTitle>条形码</FieldTitle>
+	<Width>70</Width>
+	<HeadTextHeight></HeadTextHeight>
+	<ItemHeight></ItemHeight>
+
+	<DataType></DataType>
+	<DefaultValue></DefaultValue>
+	<ControlID></ControlID>
+	<ControlType></ControlType>
+	<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+</TABLE>

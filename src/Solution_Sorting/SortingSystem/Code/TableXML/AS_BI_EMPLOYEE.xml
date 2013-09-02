@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE name="AS_BI_EMPLOYEE" ChineseName="员工信息" PrimaryKey="EMPLOYEEID" OrderBy="EMPLOYEEID" 
+       ViewName="AS_BI_EMPLOYEE" IsDisplayOpColumn="T" OpColumnWidth="50" prefixText="THOK">
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="T">
+    <FieldName>EMPLOYEEID</FieldName>
+    <FieldTitle>员工ID</FieldTitle>
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_EMPLOYEEID</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>EMPLOYEECODE</FieldName>
+    <FieldTitle>员工编号</FieldTitle>
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_EMPLOYEECODE</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>EMPLOYEENAME</FieldName>
+    <FieldTitle>员工姓名</FieldTitle>
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_EMPLOYEENAME</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="F" DisplayWhenQuery="F" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>DEPARTMENTID</FieldName>
+    <FieldTitle></FieldTitle>
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_DEPARTMENTID</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="F" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>STATUS</FieldName>
+    <FieldTitle></FieldTitle>
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_STATUS</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+
+  <FIELD DisplayWhenSelect="F" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>REMARK</FieldName>
+    <FieldTitle></FieldTitle>
+    <DataType>string</DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID>txt_REMARK</ControlID>
+    <ControlType>TextBox</ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+</TABLE>

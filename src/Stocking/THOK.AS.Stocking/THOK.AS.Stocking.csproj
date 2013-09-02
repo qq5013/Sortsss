@@ -1,0 +1,321 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7C262527-51F1-4586-B590-9F2AD56EDAAC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>THOK.AS.Stocking</RootNamespace>
+    <AssemblyName>THOK.AS.Stocking</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Framework, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>C:\WINDOWS\assembly\GAC\CrystalDecisions.Enterprise.Framework\10.2.3600.0__692fbea5521e1304\CrystalDecisions.Enterprise.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore, Version=10.5.3700.0, Culture=neutral, PublicKeyToken=692fbea5521e1304">
+      <HintPath>C:\WINDOWS\assembly\GAC\CrystalDecisions.Enterprise.InfoStore\10.2.3600.0__692fbea5521e1304\CrystalDecisions.Enterprise.InfoStore.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=10.2.3600.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DataGridViewAutoFilter, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\DataGridViewAutoFilter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="THOK.AF.View, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\THOK.AF.View.dll</HintPath>
+    </Reference>
+    <Reference Include="THOK.MCP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\THOK.MCP.dll</HintPath>
+    </Reference>
+    <Reference Include="THOK.MCP.Service.Sick, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\THOK.MCP.Service.Sick.dll</HintPath>
+    </Reference>
+    <Reference Include="THOK.MCP.Service.Siemens, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\THOK.MCP.Service.Siemens.dll</HintPath>
+    </Reference>
+    <Reference Include="THOK.MCP.Service.UDP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\THOK.MCP.Service.UDP.dll</HintPath>
+    </Reference>
+    <Reference Include="THOK.ParamUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\THOK.ParamUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="THOK.UDP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\THOK.UDP.dll</HintPath>
+    </Reference>
+    <Reference Include="THOK.Util, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\THOK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="XPanderControl, Version=1.2.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\XPanderControl.dll</HintPath>
+    </Reference>
+    <Reference Include="XPExplorerBar, Version=3.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Reference\XPExplorerBar.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dal\ChannelDal.cs" />
+    <Compile Include="Dal\StockBatchDal.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dao\ChannelDao.cs" />
+    <Compile Include="Dao\DownloadDataDao.cs" />
+    <Compile Include="Dao\ServerDao.cs" />
+    <Compile Include="Dao\StateDao.cs" />
+    <Compile Include="Dao\StockOutBatchDao.cs" />
+    <Compile Include="Dao\StockInBatchDao.cs" />
+    <Compile Include="Dao\StockInDao.cs" />
+    <Compile Include="Dao\StockOutDao.cs" />
+    <Compile Include="Dao\SupplyDao.cs" />
+    <Compile Include="Parameter.cs" />
+    <Compile Include="StateManageProcess\ScannerStateProcess.cs" />
+    <Compile Include="StockInProcess\ViewProcess.cs" />
+    <Compile Include="StockOutProcess\DataRequestProcess.cs" />
+    <Compile Include="StockInProcess\LEDProcess.cs" />
+    <Compile Include="StockInProcess\ScanProcess.cs" />
+    <Compile Include="StockInProcess\StockInRequestProcess.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="StateManageProcess\LedStateProcess.cs" />
+    <Compile Include="StateManageProcess\Dao\LedStateManage.cs" />
+    <Compile Include="StateManageProcess\Dao\OrderDataStateManage.cs" />
+    <Compile Include="StateManageProcess\OrderDataStateProcess.cs" />
+    <Compile Include="StateManageProcess\Dao\ScannerStateManage.cs" />
+    <Compile Include="StockOutProcess\SupplyNextRequestProcess.cs" />
+    <Compile Include="Util\LED2008\StringUtil.cs" />
+    <Compile Include="Util\ZebraPrinter\BarCode.cs" />
+    <Compile Include="Util\ZebraPrinter\Character.cs" />
+    <Compile Include="Util\LED2008\EQ2008_DataStruct.cs" />
+    <Compile Include="Util\LogFile.cs" />
+    <Compile Include="Util\GraphicsUtil.cs" />
+    <Compile Include="Util\LED2008\LED2008.cs" />
+    <Compile Include="Util\LED2008\LedCollection.cs" />
+    <Compile Include="Util\LED2008\LEDUtil.cs" />
+    <Compile Include="Util\ZebraPrinter\RawPrinterHelper.cs" />
+    <Compile Include="Util\SerializableUtil.cs" />
+    <Compile Include="Util\ZebraPrinter\ZebraPrinter.cs" />
+    <Compile Include="View\Control\ButtonArea.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Control\ButtonArea.Designer.cs">
+      <DependentUpon>ButtonArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\ChannelDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dialog\ChannelDialog.designer.cs">
+      <DependentUpon>ChannelDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\StateQueryDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dialog\StateQueryDialog.Designer.cs">
+      <DependentUpon>StateQueryDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\ChannelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\ChannelForm.Designer.cs">
+      <DependentUpon>ChannelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\ChannelQueryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\ChannelQueryForm.designer.cs">
+      <DependentUpon>ChannelQueryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\OrderStateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\OrderStateForm.Designer.cs">
+      <DependentUpon>OrderStateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\ParameterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\ParameterForm.designer.cs">
+      <DependentUpon>ParameterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\ScanDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dialog\ScanDialog.Designer.cs">
+      <DependentUpon>ScanDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\SimulateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dialog\SimulateDialog.Designer.cs">
+      <DependentUpon>SimulateDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\StockOutTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\StockOutTaskForm.Designer.cs">
+      <DependentUpon>StockOutTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialog\PrintSelectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Dialog\PrintSelectDialog.designer.cs">
+      <DependentUpon>PrintSelectDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\StockInTaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\StockInTaskForm.Designer.cs">
+      <DependentUpon>StockInTaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form\StockInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form\StockInForm.Designer.cs">
+      <DependentUpon>StockInForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Control\ButtonArea.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ButtonArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dialog\ChannelDialog.resx">
+      <DependentUpon>ChannelDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dialog\StateQueryDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StateQueryDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\ChannelForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChannelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\ChannelQueryForm.resx">
+      <DependentUpon>ChannelQueryForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\OrderStateForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OrderStateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\ParameterForm.resx">
+      <DependentUpon>ParameterForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dialog\ScanDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ScanDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dialog\SimulateDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SimulateDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\StockOutTaskForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StockOutTaskForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Dialog\PrintSelectDialog.resx">
+      <DependentUpon>PrintSelectDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\StockInTaskForm.resx">
+      <DependentUpon>StockInTaskForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form\StockInForm.resx">
+      <DependentUpon>StockInForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Image\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

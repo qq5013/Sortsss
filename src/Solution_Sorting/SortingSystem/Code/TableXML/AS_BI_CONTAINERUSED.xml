@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE name="AS_BI_CONTAINERUSED" ChineseName="容器使用表" PrimaryKey="CONTAINERID" OrderBy="CONTAINERID" 
+       ViewName="AS_BI_CONTAINERUSED" IsDisplayOpColumn="T" OpColumnWidth="50">
+
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>CONTAINERID</FieldName>
+    <FieldTitle>容器编号</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>AREACODE</FieldName>
+    <FieldTitle>销售部代码</FieldTitle>
+    <Width>100</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+  <FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+    <FieldName>STATUS</FieldName>
+    <FieldTitle>状态</FieldTitle>
+    <Width>100%</Width>
+    <HeadTextHeight></HeadTextHeight>
+    <ItemHeight></ItemHeight>
+
+    <DataType></DataType>
+    <DefaultValue></DefaultValue>
+    <ControlID></ControlID>
+    <ControlType></ControlType>
+    <Validate NotNull="" onfocus="" onblur=""></Validate>
+  </FIELD>
+</TABLE>

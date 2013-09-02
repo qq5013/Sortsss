@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TABLE name="V_AS_BI_CUSTOMER" ChineseName="烟道维护表" PrimaryKey="CUSTOMERCODE" OrderBy="CUSTOMERCODE" 
+       ViewName="V_AS_BI_CUSTOMER" IsDisplayOpColumn="F" OpColumnWidth="50">
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>CUSTOMERCODE</FieldName>
+		<FieldTitle>客户代码</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_CUSTOMERCODE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>90</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>CUSTOMERNAME</FieldName>
+		<FieldTitle>客户名称</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_CUSTOMERNAME</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>300</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>AREACODE</FieldName>
+		<FieldTitle>销售部代码</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_AREACODE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>90</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>AREANAME</FieldName>
+		<FieldTitle>销售部名称</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_ROUTECODE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>180</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+	
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>ROUTECODE</FieldName>
+		<FieldTitle>线路代码</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_ROUTECODE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>90</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>ROUTENAME</FieldName>
+		<FieldTitle>线路名称</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_ROUTECODE</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>180</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>LICENSENO</FieldName>
+		<FieldTitle>专卖证号</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_LICENSENO</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>110</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>SORTID</FieldName>
+		<FieldTitle>顺序</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_SORTID</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>35</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>ADDRESS</FieldName>
+		<FieldTitle>客户地址</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_ADDRESS</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>300</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+	<FIELD DisplayWhenSelect="T" DisplayWhenQuery="T" DisplayWhenEdit="T" HIDDEN="F">
+		<FieldName>TELNO</FieldName>
+		<FieldTitle>联系电话</FieldTitle>
+		<DataType>string</DataType>
+		<DefaultValue></DefaultValue>
+		<ControlID>txt_TELNO</ControlID>
+		<ControlType>TextBox</ControlType>
+		<Width>120</Width>
+		<HeadTextHeight></HeadTextHeight>
+		<ItemHeight></ItemHeight>
+		<Validate NotNull="" onfocus="" onblur=""></Validate>
+	</FIELD>
+
+</TABLE>
