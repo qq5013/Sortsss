@@ -1,39 +1,295 @@
 ﻿<?xml version='1.0' ?>
 <Config>
-  <OPCServer ConnectionString="OPC.SimaticNET">
-    <OPCGroup GroupName="DefaultGroup" GroupString="S7:[NCFJ-01]" UpdateRate="250">
-		<OPCItem ItemName="OrderRequestA" ClientHandler="1" OPCItemName="DB2,INT0,1" ItemType="READ"/>
-		<OPCItem ItemName="CurrentOrderA" ClientHandler="2" OPCItemName="DB2,INT2,1" ItemType="READ"/>
-		<OPCItem ItemName="MissOrderA" ClientHandler="3" OPCItemName="DB2,INT4,1"  ItemType="READ"/>
-		<OPCItem ItemName="EmptyErrA" ClientHandler="4" OPCItemName="DB2,INT6,1" ItemType="READ"/>
-		<OPCItem ItemName="SortingOrderA" ClientHandler="5" OPCItemName="DB2,INT8,1"  ItemType="READ" />
-		<OPCItem ItemName="CacheOrderSortNoesA" ClientHandler="6" OPCItemName="DB2,INT10,3" ItemType="READ" />
-		<OPCItem ItemName="UpdateMissOrderA" ClientHandler="7" OPCItemName="DB2,INT16,1" ItemType="WRITE"/>
-		<OPCItem ItemName="ChannelChangeDataA" ClientHandler="8" OPCItemName="DB2,INT18,3" ItemType="WRITE"/>
-		<OPCItem ItemName="CheckA" ClientHandler="9" OPCItemName="DB7,INT0,42" ItemType="READ" IsActive="false"/>
-		<OPCItem ItemName="ChannelDataA" ClientHandler="10" OPCItemName="DB8,INT0,42"  ItemType="WRITE"/>
-		<OPCItem ItemName="OrderDataA" ClientHandler="11" OPCItemName="DB10,INT0,97"  ItemType="WRITE"/>
-		<OPCItem ItemName="OrderRequestB" ClientHandler="12" OPCItemName="DB22,INT0,1" ItemType="READ"/>
-		<OPCItem ItemName="CurrentOrderB" ClientHandler="13" OPCItemName="DB22,INT2,1" ItemType="READ"/>
-		<OPCItem ItemName="MissOrderB" ClientHandler="14" OPCItemName="DB22,INT4,1"  ItemType="READ"/>
-		<OPCItem ItemName="EmptyErrB" ClientHandler="15" OPCItemName="DB22,INT6,1" ItemType="READ"/>
-		<OPCItem ItemName="SortingOrderB" ClientHandler="16" OPCItemName="DB22,INT8,1"  ItemType="READ" />
-		<OPCItem ItemName="CacheOrderSortNoesB" ClientHandler="17" OPCItemName="DB22,INT10,3" ItemType="READ" />
-		<OPCItem ItemName="UpdateMissOrderB" ClientHandler="18" OPCItemName="DB22,INT16,1"  ItemType="WRITE"/>
-		<OPCItem ItemName="ChannelChangeDataB" ClientHandler="19" OPCItemName="DB22,INT18,3" ItemType="WRITE"/>
-		<OPCItem ItemName="CheckB" ClientHandler="20" OPCItemName="DB27,INT0,42" ItemType="READ" IsActive="false"/>
-		<OPCItem ItemName="ChannelDataB" ClientHandler="21" OPCItemName="DB28,INT0,42" ItemType="WRITE"/>
-		<OPCItem ItemName="OrderDataB" ClientHandler="22" OPCItemName="DB30,INT0,97"  ItemType="WRITE"/>
-		<OPCItem ItemName="RestartData" ClientHandler="23" OPCItemName="DB100,INT0,1" ItemType="WRITE"/>
-		<OPCItem ItemName="RouteChannageTag" ClientHandler="24" OPCItemName="DB100,INT2,1"  ItemType="WRITE"/>
-		<OPCItem ItemName="SortStatus" ClientHandler="25" OPCItemName="DB100,INT6,1"  ItemType="READ" />
-		<OPCItem ItemName="SortRunStatus" ClientHandler="26" OPCItemName="DB100,INT8,1" ItemType="READ" />
-		<OPCItem ItemName="CacheOrderSortNoesBarCode1" ClientHandler="27" OPCItemName="DB100,INT10,2" ItemType="READ" />
-		<OPCItem ItemName="CacheOrderSortNoesBarCode2" ClientHandler="28" OPCItemName="DB100,INT14,2" ItemType="READ" />
-		<OPCItem ItemName="CacheOrderSortNoesPacker1" ClientHandler="29" OPCItemName="DB100,INT22,2" ItemType="READ" />
-		<OPCItem ItemName="CacheOrderSortNoesPacker2" ClientHandler="30" OPCItemName="DB100,INT26,2" ItemType="READ" />
-		<OPCItem ItemName="ExportPackNoRead" ClientHandler="31" OPCItemName="DB100,INT30,2" ItemType="READ" />
-		<OPCItem ItemName="ExportPackNoWrite" ClientHandler="32" OPCItemName="DB100,INT34,2" ItemType="WRITE" />
-	</OPCGroup>
-</OPCServer>
+  <OPCServer ConnectionString="RSLinx OPC Server">
+    <OPCGroup GroupName="DefaultGroup" GroupString="[TRY]" UpdateRate="250">
+      <!--订单请求-->
+      <OPCItem ItemName="OrderRequestA" ClientHandler="1" OPCItemName="DATA_REQ[0]" ItemType="READ" IsActive="true"/>
+      <!--完成分拣订单号-->
+      <OPCItem ItemName="CurrentOrderA" ClientHandler="2" OPCItemName="DATA_REQ[1]" ItemType="READ" IsActive="true"/>
+      <!--订单出错校验-->
+      <OPCItem ItemName="MissOrderA" ClientHandler="3" OPCItemName="DATA_REQ[2]"  ItemType="READ" IsActive="true"/>
+      <!--少烟烟道-->
+      <OPCItem ItemName="EmptyErrA" ClientHandler="4" OPCItemName="DATA_REQ[3]" ItemType="READ" IsActive="true"/>
+      <!--A线多沟带缓存开始订单号-->
+      <OPCItem ItemName="CacheOrderA_SortNo" ClientHandler="5" OPCItemName="DATA_REQ[5]" ItemType="READ" />
+      <!--A线多沟带缓存总数-->
+      <OPCItem ItemName="CacheOrderA_Total" ClientHandler="6" OPCItemName="DATA_REQ[6]" ItemType="READ" />
+      <!--A线多沟带前端小皮带卷烟数量-->
+      <OPCItem ItemName="CacheOrderA_Front" ClientHandler="7" OPCItemName="DATA_REQ[7]" ItemType="READ" />
+      <!--A线订单更新流水号-->
+      <OPCItem ItemName="UpdateMissOrderA" ClientHandler="8" OPCItemName="DATA_REQ[8]" ItemType="WRITE"/>
+      <!--A线交换角色烟道地址-->
+      <OPCItem ItemName="ChannelChangeA_From" ClientHandler="9" OPCItemName="DATA_REQ[9]" ItemType="WRITE"/>
+      <!--A线交换目标烟道地址-->
+      <OPCItem ItemName="ChannelChangeA_To" ClientHandler="10" OPCItemName="DATA_REQ[10]" ItemType="WRITE"/>
+      <!--A线交换烟道标识位-->
+      <OPCItem ItemName="ChannelChangeA_Is" ClientHandler="11" OPCItemName="DATA_REQ[11]" ItemType="WRITE"/>
+      <!--A线烟仓空仓流水号集-->
+      <OPCItem ItemName="ChannelDataA_0" ClientHandler="12" OPCItemName="NC_ORDER_NUM[0]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_1" ClientHandler="13" OPCItemName="NC_ORDER_NUM[1]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_2" ClientHandler="14" OPCItemName="NC_ORDER_NUM[2]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_3" ClientHandler="15" OPCItemName="NC_ORDER_NUM[3]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_4" ClientHandler="16" OPCItemName="NC_ORDER_NUM[4]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_5" ClientHandler="17" OPCItemName="NC_ORDER_NUM[5]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_6" ClientHandler="18" OPCItemName="NC_ORDER_NUM[6]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_7" ClientHandler="19" OPCItemName="NC_ORDER_NUM[7]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_8" ClientHandler="20" OPCItemName="NC_ORDER_NUM[8]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_9" ClientHandler="21" OPCItemName="NC_ORDER_NUM[9]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_10" ClientHandler="22" OPCItemName="NC_ORDER_NUM[10]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_11" ClientHandler="23" OPCItemName="NC_ORDER_NUM[11]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_12" ClientHandler="24" OPCItemName="NC_ORDER_NUM[12]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_13" ClientHandler="25" OPCItemName="NC_ORDER_NUM[13]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_14" ClientHandler="26" OPCItemName="NC_ORDER_NUM[14]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_15" ClientHandler="27" OPCItemName="NC_ORDER_NUM[15]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_16" ClientHandler="28" OPCItemName="NC_ORDER_NUM[16]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_17" ClientHandler="29" OPCItemName="NC_ORDER_NUM[17]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_18" ClientHandler="30" OPCItemName="NC_ORDER_NUM[18]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_19" ClientHandler="31" OPCItemName="NC_ORDER_NUM[19]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_20" ClientHandler="32" OPCItemName="NC_ORDER_NUM[20]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_21" ClientHandler="33" OPCItemName="NC_ORDER_NUM[21]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_22" ClientHandler="34" OPCItemName="NC_ORDER_NUM[22]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_23" ClientHandler="35" OPCItemName="NC_ORDER_NUM[23]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_24" ClientHandler="36" OPCItemName="NC_ORDER_NUM[24]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_25" ClientHandler="37" OPCItemName="NC_ORDER_NUM[25]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_26" ClientHandler="38" OPCItemName="NC_ORDER_NUM[26]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_27" ClientHandler="39" OPCItemName="NC_ORDER_NUM[27]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_28" ClientHandler="40" OPCItemName="NC_ORDER_NUM[28]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_29" ClientHandler="41" OPCItemName="NC_ORDER_NUM[29]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_30" ClientHandler="42" OPCItemName="NC_ORDER_NUM[30]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_31" ClientHandler="43" OPCItemName="NC_ORDER_NUM[31]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_32" ClientHandler="44" OPCItemName="NC_ORDER_NUM[32]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_33" ClientHandler="45" OPCItemName="NC_ORDER_NUM[33]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_34" ClientHandler="46" OPCItemName="NC_ORDER_NUM[34]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_35" ClientHandler="47" OPCItemName="NC_ORDER_NUM[35]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_36" ClientHandler="48" OPCItemName="NC_ORDER_NUM[36]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_37" ClientHandler="49" OPCItemName="NC_ORDER_NUM[37]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_38" ClientHandler="50" OPCItemName="NC_ORDER_NUM[38]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_39" ClientHandler="51" OPCItemName="NC_ORDER_NUM[39]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_40" ClientHandler="52" OPCItemName="NC_ORDER_NUM[40]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_41" ClientHandler="53" OPCItemName="NC_ORDER_NUM[41]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_42" ClientHandler="54" OPCItemName="NC_ORDER_NUM[42]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_43" ClientHandler="55" OPCItemName="NC_ORDER_NUM[43]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_44" ClientHandler="56" OPCItemName="NC_ORDER_NUM[44]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_45" ClientHandler="57" OPCItemName="NC_ORDER_NUM[45]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_46" ClientHandler="58" OPCItemName="NC_ORDER_NUM[46]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_47" ClientHandler="59" OPCItemName="NC_ORDER_NUM[47]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_48" ClientHandler="60" OPCItemName="NC_ORDER_NUM[48]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_49" ClientHandler="61" OPCItemName="NC_ORDER_NUM[49]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_50" ClientHandler="62" OPCItemName="NC_ORDER_NUM[50]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_51" ClientHandler="63" OPCItemName="NC_ORDER_NUM[51]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_52" ClientHandler="64" OPCItemName="NC_ORDER_NUM[52]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_53" ClientHandler="65" OPCItemName="NC_ORDER_NUM[53]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_54" ClientHandler="66" OPCItemName="NC_ORDER_NUM[54]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_55" ClientHandler="67" OPCItemName="NC_ORDER_NUM[55]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_56" ClientHandler="68" OPCItemName="NC_ORDER_NUM[56]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_57" ClientHandler="69" OPCItemName="NC_ORDER_NUM[57]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_58" ClientHandler="70" OPCItemName="NC_ORDER_NUM[58]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_59" ClientHandler="71" OPCItemName="NC_ORDER_NUM[59]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_60" ClientHandler="72" OPCItemName="NC_ORDER_NUM[60]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_61" ClientHandler="73" OPCItemName="NC_ORDER_NUM[61]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_62" ClientHandler="74" OPCItemName="NC_ORDER_NUM[62]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_63" ClientHandler="75" OPCItemName="NC_ORDER_NUM[63]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_64" ClientHandler="76" OPCItemName="NC_ORDER_NUM[64]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_65" ClientHandler="77" OPCItemName="NC_ORDER_NUM[65]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_66" ClientHandler="78" OPCItemName="NC_ORDER_NUM[66]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_67" ClientHandler="79" OPCItemName="NC_ORDER_NUM[67]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_68" ClientHandler="80" OPCItemName="NC_ORDER_NUM[68]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_69" ClientHandler="81" OPCItemName="NC_ORDER_NUM[69]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_70" ClientHandler="82" OPCItemName="NC_ORDER_NUM[70]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_71" ClientHandler="83" OPCItemName="NC_ORDER_NUM[71]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_72" ClientHandler="84" OPCItemName="NC_ORDER_NUM[72]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_73" ClientHandler="85" OPCItemName="NC_ORDER_NUM[73]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_74" ClientHandler="86" OPCItemName="NC_ORDER_NUM[74]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_75" ClientHandler="87" OPCItemName="NC_ORDER_NUM[75]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_76" ClientHandler="88" OPCItemName="NC_ORDER_NUM[76]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_77" ClientHandler="89" OPCItemName="NC_ORDER_NUM[77]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_78" ClientHandler="90" OPCItemName="NC_ORDER_NUM[78]"  ItemType="WRITE"/>
+      <OPCItem ItemName="ChannelDataA_79" ClientHandler="91" OPCItemName="NC_ORDER_NUM[79]"  ItemType="WRITE"/>
+      <!--A线订单下单信息集-->
+      <OPCItem ItemName="OrderDataA_0" ClientHandler="92" OPCItemName="PC_DATA[0]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_1" ClientHandler="93" OPCItemName="PC_DATA[1]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_2" ClientHandler="94" OPCItemName="PC_DATA[2]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_3" ClientHandler="95" OPCItemName="PC_DATA[3]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_4" ClientHandler="96" OPCItemName="PC_DATA[4]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_5" ClientHandler="97" OPCItemName="PC_DATA[5]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_6" ClientHandler="98" OPCItemName="PC_DATA[6]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_7" ClientHandler="99" OPCItemName="PC_DATA[7]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_8" ClientHandler="100" OPCItemName="PC_DATA[8]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_9" ClientHandler="101" OPCItemName="PC_DATA[9]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_10" ClientHandler="102" OPCItemName="PC_DATA[10]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_11" ClientHandler="103" OPCItemName="PC_DATA[11]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_12" ClientHandler="104" OPCItemName="PC_DATA[12]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_13" ClientHandler="105" OPCItemName="PC_DATA[13]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_14" ClientHandler="106" OPCItemName="PC_DATA[14]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_15" ClientHandler="107" OPCItemName="PC_DATA[15]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_16" ClientHandler="108" OPCItemName="PC_DATA[16]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_17" ClientHandler="109" OPCItemName="PC_DATA[17]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_18" ClientHandler="110" OPCItemName="PC_DATA[18]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_19" ClientHandler="111" OPCItemName="PC_DATA[19]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_20" ClientHandler="112" OPCItemName="PC_DATA[20]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_21" ClientHandler="113" OPCItemName="PC_DATA[21]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_22" ClientHandler="114" OPCItemName="PC_DATA[22]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_23" ClientHandler="115" OPCItemName="PC_DATA[23]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_24" ClientHandler="116" OPCItemName="PC_DATA[24]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_25" ClientHandler="117" OPCItemName="PC_DATA[25]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_26" ClientHandler="118" OPCItemName="PC_DATA[26]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_27" ClientHandler="119" OPCItemName="PC_DATA[27]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_28" ClientHandler="120" OPCItemName="PC_DATA[28]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_29" ClientHandler="121" OPCItemName="PC_DATA[29]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_30" ClientHandler="122" OPCItemName="PC_DATA[30]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_31" ClientHandler="123" OPCItemName="PC_DATA[31]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_32" ClientHandler="124" OPCItemName="PC_DATA[32]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_33" ClientHandler="125" OPCItemName="PC_DATA[33]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_34" ClientHandler="126" OPCItemName="PC_DATA[34]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_35" ClientHandler="127" OPCItemName="PC_DATA[35]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_36" ClientHandler="128" OPCItemName="PC_DATA[36]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_37" ClientHandler="129" OPCItemName="PC_DATA[37]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_38" ClientHandler="130" OPCItemName="PC_DATA[38]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_39" ClientHandler="131" OPCItemName="PC_DATA[39]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_40" ClientHandler="132" OPCItemName="PC_DATA[40]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_41" ClientHandler="133" OPCItemName="PC_DATA[41]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_42" ClientHandler="134" OPCItemName="PC_DATA[42]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_43" ClientHandler="135" OPCItemName="PC_DATA[43]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_44" ClientHandler="136" OPCItemName="PC_DATA[44]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_45" ClientHandler="137" OPCItemName="PC_DATA[45]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_46" ClientHandler="138" OPCItemName="PC_DATA[46]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_47" ClientHandler="139" OPCItemName="PC_DATA[47]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_48" ClientHandler="140" OPCItemName="PC_DATA[48]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_49" ClientHandler="141" OPCItemName="PC_DATA[49]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_50" ClientHandler="142" OPCItemName="PC_DATA[50]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_51" ClientHandler="143" OPCItemName="PC_DATA[51]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_52" ClientHandler="144" OPCItemName="PC_DATA[52]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_53" ClientHandler="145" OPCItemName="PC_DATA[53]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_54" ClientHandler="146" OPCItemName="PC_DATA[54]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_55" ClientHandler="147" OPCItemName="PC_DATA[55]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_56" ClientHandler="148" OPCItemName="PC_DATA[56]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_57" ClientHandler="149" OPCItemName="PC_DATA[57]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_58" ClientHandler="150" OPCItemName="PC_DATA[58]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_59" ClientHandler="151" OPCItemName="PC_DATA[59]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_60" ClientHandler="152" OPCItemName="PC_DATA[60]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_61" ClientHandler="153" OPCItemName="PC_DATA[61]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_62" ClientHandler="154" OPCItemName="PC_DATA[62]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_63" ClientHandler="155" OPCItemName="PC_DATA[63]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_64" ClientHandler="156" OPCItemName="PC_DATA[64]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_65" ClientHandler="157" OPCItemName="PC_DATA[65]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_66" ClientHandler="158" OPCItemName="PC_DATA[66]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_67" ClientHandler="159" OPCItemName="PC_DATA[67]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_68" ClientHandler="160" OPCItemName="PC_DATA[68]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_69" ClientHandler="161" OPCItemName="PC_DATA[69]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_70" ClientHandler="162" OPCItemName="PC_DATA[70]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_71" ClientHandler="163" OPCItemName="PC_DATA[71]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_72" ClientHandler="164" OPCItemName="PC_DATA[72]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_73" ClientHandler="165" OPCItemName="PC_DATA[73]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_74" ClientHandler="166" OPCItemName="PC_DATA[74]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_75" ClientHandler="167" OPCItemName="PC_DATA[75]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_76" ClientHandler="168" OPCItemName="PC_DATA[76]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_77" ClientHandler="169" OPCItemName="PC_DATA[77]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_78" ClientHandler="170" OPCItemName="PC_DATA[78]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_79" ClientHandler="171" OPCItemName="PC_DATA[79]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_80" ClientHandler="172" OPCItemName="PC_DATA[80]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_81" ClientHandler="173" OPCItemName="PC_DATA[81]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_82" ClientHandler="174" OPCItemName="PC_DATA[82]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_83" ClientHandler="175" OPCItemName="PC_DATA[83]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_84" ClientHandler="176" OPCItemName="PC_DATA[84]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_85" ClientHandler="177" OPCItemName="PC_DATA[85]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_86" ClientHandler="178" OPCItemName="PC_DATA[86]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_87" ClientHandler="179" OPCItemName="PC_DATA[87]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_88" ClientHandler="180" OPCItemName="PC_DATA[88]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_89" ClientHandler="181" OPCItemName="PC_DATA[89]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_90" ClientHandler="182" OPCItemName="PC_DATA[90]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_91" ClientHandler="183" OPCItemName="PC_DATA[91]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_92" ClientHandler="184" OPCItemName="PC_DATA[92]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_93" ClientHandler="185" OPCItemName="PC_DATA[93]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_94" ClientHandler="186" OPCItemName="PC_DATA[94]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_95" ClientHandler="187" OPCItemName="PC_DATA[95]" ItemType="WRITE"/>
+      <OPCItem ItemName="OrderDataA_96" ClientHandler="188" OPCItemName="PC_DATA[96]" ItemType="WRITE"/>
+      <!--A线烟仓盘点出烟量集-->
+      <OPCItem ItemName="CheckA_0" ClientHandler="189" OPCItemName="DATA_ATCHECK[0]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_1" ClientHandler="190" OPCItemName="DATA_ATCHECK[1]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_2" ClientHandler="191" OPCItemName="DATA_ATCHECK[2]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_3" ClientHandler="192" OPCItemName="DATA_ATCHECK[3]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_4" ClientHandler="193" OPCItemName="DATA_ATCHECK[4]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_5" ClientHandler="194" OPCItemName="DATA_ATCHECK[5]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_6" ClientHandler="195" OPCItemName="DATA_ATCHECK[6]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_7" ClientHandler="196" OPCItemName="DATA_ATCHECK[7]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_8" ClientHandler="197" OPCItemName="DATA_ATCHECK[8]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_9" ClientHandler="198" OPCItemName="DATA_ATCHECK[9]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_10" ClientHandler="199" OPCItemName="DATA_ATCHECK[10]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_11" ClientHandler="200" OPCItemName="DATA_ATCHECK[11]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_12" ClientHandler="201" OPCItemName="DATA_ATCHECK[12]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_13" ClientHandler="202" OPCItemName="DATA_ATCHECK[13]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_14" ClientHandler="203" OPCItemName="DATA_ATCHECK[14]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_15" ClientHandler="204" OPCItemName="DATA_ATCHECK[15]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_16" ClientHandler="205" OPCItemName="DATA_ATCHECK[16]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_17" ClientHandler="206" OPCItemName="DATA_ATCHECK[17]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_18" ClientHandler="207" OPCItemName="DATA_ATCHECK[18]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_19" ClientHandler="208" OPCItemName="DATA_ATCHECK[19]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_20" ClientHandler="209" OPCItemName="DATA_ATCHECK[20]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_21" ClientHandler="210" OPCItemName="DATA_ATCHECK[21]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_22" ClientHandler="211" OPCItemName="DATA_ATCHECK[22]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_23" ClientHandler="212" OPCItemName="DATA_ATCHECK[23]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_24" ClientHandler="213" OPCItemName="DATA_ATCHECK[24]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_25" ClientHandler="214" OPCItemName="DATA_ATCHECK[25]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_26" ClientHandler="215" OPCItemName="DATA_ATCHECK[26]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_27" ClientHandler="216" OPCItemName="DATA_ATCHECK[27]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_28" ClientHandler="217" OPCItemName="DATA_ATCHECK[28]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_29" ClientHandler="218" OPCItemName="DATA_ATCHECK[29]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_30" ClientHandler="219" OPCItemName="DATA_ATCHECK[30]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_31" ClientHandler="220" OPCItemName="DATA_ATCHECK[31]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_32" ClientHandler="221" OPCItemName="DATA_ATCHECK[32]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_33" ClientHandler="222" OPCItemName="DATA_ATCHECK[33]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_34" ClientHandler="223" OPCItemName="DATA_ATCHECK[34]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_35" ClientHandler="224" OPCItemName="DATA_ATCHECK[35]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_36" ClientHandler="225" OPCItemName="DATA_ATCHECK[36]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_37" ClientHandler="226" OPCItemName="DATA_ATCHECK[37]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_38" ClientHandler="227" OPCItemName="DATA_ATCHECK[38]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_39" ClientHandler="228" OPCItemName="DATA_ATCHECK[39]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_40" ClientHandler="229" OPCItemName="DATA_ATCHECK[40]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_41" ClientHandler="230" OPCItemName="DATA_ATCHECK[41]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_42" ClientHandler="231" OPCItemName="DATA_ATCHECK[42]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_43" ClientHandler="232" OPCItemName="DATA_ATCHECK[43]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_44" ClientHandler="233" OPCItemName="DATA_ATCHECK[44]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_45" ClientHandler="234" OPCItemName="DATA_ATCHECK[45]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_46" ClientHandler="235" OPCItemName="DATA_ATCHECK[46]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_47" ClientHandler="236" OPCItemName="DATA_ATCHECK[47]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_48" ClientHandler="237" OPCItemName="DATA_ATCHECK[48]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_49" ClientHandler="238" OPCItemName="DATA_ATCHECK[49]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_50" ClientHandler="239" OPCItemName="DATA_ATCHECK[50]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_51" ClientHandler="240" OPCItemName="DATA_ATCHECK[51]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_52" ClientHandler="241" OPCItemName="DATA_ATCHECK[52]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_53" ClientHandler="242" OPCItemName="DATA_ATCHECK[53]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_54" ClientHandler="233" OPCItemName="DATA_ATCHECK[54]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_55" ClientHandler="244" OPCItemName="DATA_ATCHECK[55]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_56" ClientHandler="245" OPCItemName="DATA_ATCHECK[56]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_57" ClientHandler="246" OPCItemName="DATA_ATCHECK[57]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_58" ClientHandler="247" OPCItemName="DATA_ATCHECK[58]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_59" ClientHandler="248" OPCItemName="DATA_ATCHECK[59]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_60" ClientHandler="249" OPCItemName="DATA_ATCHECK[60]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_61" ClientHandler="250" OPCItemName="DATA_ATCHECK[61]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_62" ClientHandler="251" OPCItemName="DATA_ATCHECK[62]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_63" ClientHandler="252" OPCItemName="DATA_ATCHECK[63]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_64" ClientHandler="253" OPCItemName="DATA_ATCHECK[64]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_65" ClientHandler="254" OPCItemName="DATA_ATCHECK[65]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_66" ClientHandler="255" OPCItemName="DATA_ATCHECK[66]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_67" ClientHandler="256" OPCItemName="DATA_ATCHECK[67]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_68" ClientHandler="257" OPCItemName="DATA_ATCHECK[68]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_69" ClientHandler="258" OPCItemName="DATA_ATCHECK[69]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_70" ClientHandler="259" OPCItemName="DATA_ATCHECK[70]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_71" ClientHandler="260" OPCItemName="DATA_ATCHECK[71]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_72" ClientHandler="261" OPCItemName="DATA_ATCHECK[72]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_73" ClientHandler="262" OPCItemName="DATA_ATCHECK[73]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_74" ClientHandler="263" OPCItemName="DATA_ATCHECK[74]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_75" ClientHandler="264" OPCItemName="DATA_ATCHECK[75]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_76" ClientHandler="265" OPCItemName="DATA_ATCHECK[76]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_77" ClientHandler="266" OPCItemName="DATA_ATCHECK[77]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_78" ClientHandler="267" OPCItemName="DATA_ATCHECK[78]"  ItemType="READ"/>
+      <OPCItem ItemName="CheckA_79" ClientHandler="268" OPCItemName="DATA_ATCHECK[79]"  ItemType="READ"/>
+      <!--重新分拣标识位-->
+      <OPCItem ItemName="RestartData" ClientHandler="269" OPCItemName="PC_PLC[0]"  ItemType="READ" />
+      <!--设备运行故障位-->
+      <OPCItem ItemName="SortStatus" ClientHandler="270" OPCItemName="PC_PLC[3]"  ItemType="READ" />
+      <!--设备运行时间位-->
+      <OPCItem ItemName="SortRunStatus" ClientHandler="271" OPCItemName="PC_PLC[4]" ItemType="READ" />
+    </OPCGroup>
+  </OPCServer>
 </Config>
