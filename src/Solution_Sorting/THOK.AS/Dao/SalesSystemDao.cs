@@ -8,7 +8,7 @@ namespace THOK.AS.Dao
 {
     public class SalesSystemDao : BaseDao
     {
-        public string dbTypeName = "zybzjk-mssql";
+        public string dbTypeName = "gzqdn-oracle";
         public SalesSystemDao()
         {
             THOK.AS.Dao.SysParameterDao parameterDao = new SysParameterDao();
@@ -26,12 +26,12 @@ namespace THOK.AS.Dao
         public DataTable FindArea()
         {
             string sql = "";
-
+            dbTypeName = "gzqdn-oracle";
             switch (dbTypeName)
             {
-                case "zybzjk-mssql":
-                    sql = @"SELECT SALE_REG_CODE AS AREACODE,SALE_REG_NAME AS AREANAME,0 AS SORTID " +
-                            " FROM DWV_ORG_SALE_REGION";
+                case "gzqdn-oracle":
+                    sql = @"SELECT DISTINCT 1 AS AREACODE,'全部线路' AS AREANAME,0 AS SORTID
+                            FROM V_WMS_DELIVER_LINE WHERE ISACTIVE = '1'";
                     break;
                 case "dyyc-db2":
                     sql = @"SELECT AREACODE, AREANAME,0 AS SORTID " +
@@ -76,9 +76,9 @@ namespace THOK.AS.Dao
 
             switch (dbTypeName)
             {
-                case "zybzjk-mssql":
-                    sql = @"SELECT DELIVER_LINE_CODE AS ROUTECODE, DELIVER_LINE_NAME AS ROUTENAME, '', DELIVER_LINE_ORDER AS SORTID, '' " +
-                            " FROM DWV_CAR_DELIVER_LINE";
+                case "gzqdn-oracle":
+                    sql = @"SELECT DELIVER_LINE_CODE AS ROUTECODE, DELIVER_LINE_NAME AS ROUTENAME, 1 AS AREACODE, DELIVER_LINE_ORDER AS SORTID
+                             FROM V_WMS_DELIVER_LINE WHERE ISACTIVE = '1'";
                     break;
                 case "dyyc-db2":
                     sql = @"SELECT ROUTECODE,ROUTENAME, AREACODE, SORTID " +
@@ -122,10 +122,13 @@ namespace THOK.AS.Dao
 
             switch (dbTypeName)
             {
-                case "zybzjk-mssql":
-                    sql = @"SELECT CUST_CODE AS CUSTOMERCODE,CUST_NAME AS CUSTOMERNAME,DELIVER_LINE_CODE AS ROUTECODE, " +
-                            "SALE_REG_CODE AS AREACODE,LICENSE_CODE AS LICENSENO,DELIVER_ORDER AS SORTID, " +
-                            "PRINCIPAL_TEL AS TELNO,PRINCIPAL_ADDRESS AS ADDRESS FROM DWV_ORG_CUSTOMER";
+                case "gzqdn-oracle":
+                    sql = @"SELECT CUST_CODE AS CUSTOMERCODE,LTRIM(RTRIM(PRINCIPAL_NAME)) AS CUSTOMERNAME,
+                             A.DELIVER_LINE_CODE AS ROUTECODE,1 AS AREACODE,LICENSE_CODE AS LICENSENO,
+                             DELIVER_ORDER AS SORTID,DIST_PHONE AS TELNO,DIST_ADDRESS AS ADDRESS,N_CUST_CODE
+                             FROM V_WMS_CUSTOMER A
+                             LEFT JOIN V_WMS_DELIVER_LINE B ON A.DELIVER_LINE_CODE = B.DELIVER_LINE_CODE
+                             WHERE A.ISACTIVE ='1'";
                     break;
                 case "dyyc-db2":
                     sql = @"SELECT A.CUSTOMERCODE, A.CUSTOMERNAME, A.ROUTECODE, " +
@@ -168,7 +171,7 @@ namespace THOK.AS.Dao
                 case "ncyc-db2":
                     sql = @"SELECT A.CUSTOMERCODE, A.CUSTOMERNAME, A.ROUTECODE, " +
                             " B.AREACODE AS AREACODE,A.LICENSENO,A.SORTID, A.TELNO," +
-                            " A.ADDRESS,A.LICENSENO AS N_CUST_CODE  FROM OUKANG.OUKANG_CUST A " +
+                            " A.ADDRESS,A.CUSTOMERCODE AS N_CUST_CODE  FROM OUKANG.OUKANG_CUST A " +
                             " LEFT JOIN OUKANG.OUKANG_RUT B ON A.ROUTECODE = B.ROUTECODE";
                     break;
                 default:
@@ -191,10 +194,10 @@ namespace THOK.AS.Dao
 
             switch (dbTypeName)
             {
-                case "zybzjk-mssql":
-                    sql = @"SELECT BRAND_CODE AS CIGARETTECODE,BRAND_NAME AS CIGARETTENAME," +
-                            " IS_ABNORMITY_BRAND AS ISABNORMITY,RIGHT(BARCODE_PIECE,6) AS BARCODE" +
-                            " FROM DWV_INF_BRAND";
+                case "gzqdn-oracle":
+                    sql = @"SELECT LTRIM(RTRIM(BRAND_CODE)) AS CIGARETTECODE,LTRIM(RTRIM(BRAND_NAME)) AS CIGARETTENAME,
+                            IS_ABNORMITY_BRAND AS ISABNORMITY,SUBSTR(BARCODE_PIECE, -6, 6) AS BARCODE
+                            FROM V_WMS_BRAND  WHERE ISACTIVE ='1'";
                     break;
                 case "dyyc-db2":
                     sql = @"SELECT CIGARETTECODE, CIGARETTENAME,ISABNORMITY,RIGHT(ltrim(rtrim(BARCODE)),6)  BARCODE " +
@@ -254,11 +257,11 @@ namespace THOK.AS.Dao
 
             switch (dbTypeName)
             {
-                case "zybzjk-mssql":
-                    sql = @"SELECT '{0}',{1}, ORDER_ID AS ORDERID, SALE_REG_CODE AS AREACODE,DELIVER_LINE_CODE AS ROUTECODE, " +
-                            " CUST_CODE AS CUSTOMERCODE,DELIVER_ORDER AS SORTID " +
-                            " FROM DWV_ORD_ORDER " +
-                            " WHERE ORDER_DATE LIKE '{2}%' AND DELIVER_LINE_CODE NOT IN ({3})";
+                case "gzqdn-oracle":
+                    sql = @"SELECT '{0}', {1}, ORDER_ID AS ORDERID,ORG_CODE AS ORGCODE,1 AS AREACODE,
+                             DELIVER_LINE_CODE AS ROUTECODE,CUST_CODE AS CUSTOMERCODE,DELIVER_ORDER AS SORTID ,DETAIL_NUM AS DETAILNUM,'0' AS IS_IMPORT 
+                             FROM V_WMS_SORT_ORDER
+                             WHERE ORDER_DATE = '{2}' AND DELIVER_LINE_CODE NOT IN ({3}) AND ISACTIVE ='1' ";
                     break;
                 case "dyyc-db2":
                     sql = @"SELECT '{0}', {1}, A.ORDERID AS ORDERID,A.AREACODE AS AREACODE,A.RUTCODE AS ROUTECODE," +
@@ -306,8 +309,8 @@ namespace THOK.AS.Dao
                             " FROM DWV_ORD_ORDER WHERE ORDER_DATE LIKE '{2}%' AND DELIVER_LINE_CODE NOT IN ({3})";
                     break;
             }
-
-            return ExecuteQuery(string.Format(sql, orderDate.ToString("yyyy-MM-dd"), batchNo, orderDate.ToString("yyyy-MM-dd"), routes)).Tables[0];
+            sql = string.Format(sql, orderDate.ToString("yyyy-MM-dd"), batchNo, orderDate.ToString("yyyyMMdd"), routes == "''" ? "'" + routes + "'" : routes);
+            return ExecuteQuery(sql).Tables[0];
         }
 
         /// <summary> 
@@ -323,10 +326,13 @@ namespace THOK.AS.Dao
 
             switch (dbTypeName)
             {
-                case "zybzjk-mssql":
-                    sql = @"SELECT ORDER_ID AS ORDERID, BRAND_CODE AS CIGARETTECODE, BRAND_NAME AS CIGARETTENAME,QUANTITY,0,0,'{0}',{1}" +
-                            " FROM DWV_ORD_ORDER_DETAIL WHERE ORDER_ID IN (SELECT ORDER_ID FROM DWV_ORD_ORDER WHERE ORDER_DATE LIKE '{2}%' " +
-                            " AND DELIVER_LINE_CODE NOT IN ({3}))";
+                case "gzqdn-oracle":
+                    sql = @"SELECT A.ORDER_DETAIL_ID AS ORDERDETAILID,A.ORDER_ID AS ORDERID,LTRIM(RTRIM(A.BRAND_CODE)) AS CIGARETTECODE, 
+                             LTRIM(RTRIM(A.BRAND_NAME)) AS CIGARETTENAME,'条' AS UTINNAME,A.QUANTITY AS QUANTITY,0,0,'{0}',{1},
+                             QTY_DEMAND AS QTYDEMAND,PRICE AS PRICE,AMOUNT AS AMOUNT,'0' AS IS_IMPORT,A.QUANTITY AS ORDER_QUANTITY 
+                             FROM V_WMS_SORT_ORDER_DETAIL A 
+                             LEFT JOIN V_WMS_SORT_ORDER B ON A.ORDER_ID = B.ORDER_ID
+                             WHERE B.ORDER_DATE = '{2}' AND B.DELIVER_LINE_CODE NOT IN ({3}) AND A.QUANTITY > 0 ";
                     break;
                 case "dyyc-db2":
                     sql = @"SELECT A.ORDERID AS ORDERID, A.CIGARETTECODE AS CIGARETTECODE, B.CIGARETTENAME AS CIGARETTENAME,A.QUANTITY,0,0,'{0}',{1}" +
@@ -378,7 +384,8 @@ namespace THOK.AS.Dao
                             " AND DELIVER_LINE_CODE NOT IN ({3}))";
                     break;
             }
-            return ExecuteQuery(string.Format(sql, orderDate.ToString("yyyy-MM-dd"), batchNo, orderDate.ToString("yyyy-MM-dd"), routes)).Tables[0];
+            sql = string.Format(sql, orderDate.ToString("yyyy-MM-dd"), batchNo, orderDate.ToString("yyyyMMdd"), routes == "''" ? "'" + routes + "'" : routes);
+            return ExecuteQuery(sql).Tables[0];
         }
     }
 }

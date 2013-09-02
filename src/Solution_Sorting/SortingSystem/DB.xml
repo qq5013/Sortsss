@@ -8,9 +8,9 @@
     <ConnectionString Value="server=10.66.97.250;database=ngphnamw;uid=hnamw;" />
     <Password Name="password" Value="96C77EEAE00CF241" />
   </Connection>
-  <Connection Name="OuterConnection" DatabaseType="DB2">
-    <ConnectionString Value="server=10.89.104.20:60000;database=NCYXTD;uid=oukang;" />
-    <Password Name="password" Value="9E3A36473F09F36E" />
+  <Connection Name="OuterConnection"  DatabaseType="ORACLE">
+    <ConnectionString Value="Server=(DESCRIPTION =(ADDRESS_LIST=(ADDRESS=(PROTOCOL = TCP)(HOST = 10.95.1.108)(PORT = 1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SID=gzv3db1)));uid=zhgl;" />
+    <Password Name="password" Value="251F44E02521A037" />
   </Connection>
   <Connection Name="DB2Connection" DatabaseType="DB2">
     <ConnectionString Value="server=10.66.97.230:50000;database=TRADECTR;uid=ic;" />
