@@ -111,11 +111,6 @@
     <Compile Include="Dao\SupplyDao.cs" />
     <Compile Include="Parameter.cs" />
     <Compile Include="StateManageProcess\ScannerStateProcess.cs" />
-    <Compile Include="StockInProcess\ViewProcess.cs" />
-    <Compile Include="StockOutProcess\DataRequestProcess.cs" />
-    <Compile Include="StockInProcess\LEDProcess.cs" />
-    <Compile Include="StockInProcess\ScanProcess.cs" />
-    <Compile Include="StockInProcess\StockInRequestProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -132,6 +127,7 @@
     <Compile Include="StateManageProcess\Dao\OrderDataStateManage.cs" />
     <Compile Include="StateManageProcess\OrderDataStateProcess.cs" />
     <Compile Include="StateManageProcess\Dao\ScannerStateManage.cs" />
+    <Compile Include="CommonProcess\LEDProcess.cs" />
     <Compile Include="StockOutProcess\SupplyNextRequestProcess.cs" />
     <Compile Include="Util\LED2008\StringUtil.cs" />
     <Compile Include="Util\ZebraPrinter\BarCode.cs" />
@@ -211,18 +207,6 @@
     <Compile Include="View\Dialog\PrintSelectDialog.designer.cs">
       <DependentUpon>PrintSelectDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\Form\StockInTaskForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Form\StockInTaskForm.Designer.cs">
-      <DependentUpon>StockInTaskForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\Form\StockInForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Form\StockInForm.Designer.cs">
-      <DependentUpon>StockInForm.cs</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -272,14 +256,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Dialog\PrintSelectDialog.resx">
       <DependentUpon>PrintSelectDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\StockInTaskForm.resx">
-      <DependentUpon>StockInTaskForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Form\StockInForm.resx">
-      <DependentUpon>StockInForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

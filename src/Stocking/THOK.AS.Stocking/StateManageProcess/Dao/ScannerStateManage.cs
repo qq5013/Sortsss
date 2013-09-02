@@ -231,7 +231,8 @@ namespace THOK.AS.Stocking.StateManageProcess.Dao
                 data[0] = supplyAddress;
                 data[1] = this.index;
 
-                if (dispatcher.WriteToService(plcServicesName, releaseItemName, data))
+                if (dispatcher.WriteToService(plcServicesName, releaseItemName + "_1", data[0])
+                    && dispatcher.WriteToService(plcServicesName, releaseItemName + "_2", data[1]))
                 {
                     result = true;
                     Logger.Info(string.Format("{0}号扫码器，写分流数据成功，目标：'{1}'流水号：'{2}'", stateItemCode, data[0],this.index));

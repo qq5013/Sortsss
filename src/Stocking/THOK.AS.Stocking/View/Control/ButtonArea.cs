@@ -18,48 +18,13 @@ namespace THOK.AS.Stocking.View
         {
             InitializeComponent();
         }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            if (btnStop.Enabled)
-            {
-                MessageBox.Show("先停止出库才能退出系统。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            if (DialogResult.Yes == MessageBox.Show("您确定要退出备货监控系统吗？", "询问", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
-            {
-                Util.LogFile.DeleteFile();
-                Application.Exit();
-            }
-        }
-
-        private void btnOperate_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                THOK.AF.Config config = new THOK.AF.Config();
-                THOK.AF.MainFrame mainFrame = new THOK.AF.MainFrame(config);
-                mainFrame.Context = Context;
-                mainFrame.ShowInTaskbar = false;
-                mainFrame.Icon = new Icon(@"./App.ico");
-                mainFrame.ShowIcon = true;
-                mainFrame.StartPosition = FormStartPosition.CenterScreen;
-                mainFrame.WindowState = FormWindowState.Maximized;
-                mainFrame.ShowDialog();
-            }
-            catch (Exception ee)
-            {
-                Logger.Error("操作作业处理失败，原因：" + ee.Message);
-            }
-
-        }
+             
 
         private void btnDownload_Click(object sender, EventArgs e)
         {            
             try
             {
                 DownloadData();
-                Context.ProcessDispatcher.WriteToProcess("LEDProcess", "Refresh", null);
                 Context.ProcessDispatcher.WriteToProcess("LedStateProcess", "Refresh", null);
             }
             catch (Exception ex)
@@ -99,10 +64,51 @@ namespace THOK.AS.Stocking.View
             SwitchStatus(false);
         }
 
+        private void btnSimulate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOperate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                THOK.AF.Config config = new THOK.AF.Config();
+                THOK.AF.MainFrame mainFrame = new THOK.AF.MainFrame(config);
+                mainFrame.Context = Context;
+                mainFrame.ShowInTaskbar = false;
+                mainFrame.Icon = new Icon(@"./App.ico");
+                mainFrame.ShowIcon = true;
+                mainFrame.StartPosition = FormStartPosition.CenterScreen;
+                mainFrame.WindowState = FormWindowState.Maximized;
+                mainFrame.ShowDialog();
+            }
+            catch (Exception ee)
+            {
+                Logger.Error("操作作业处理失败，原因：" + ee.Message);
+            }
+
+        }
+
         private void btnHelp_Click(object sender, EventArgs e)
         {
             Help.ShowHelp(this, "help.chm");
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (btnStop.Enabled)
+            {
+                MessageBox.Show("先停止出库才能退出系统。", "提示", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (DialogResult.Yes == MessageBox.Show("您确定要退出备货监控系统吗？", "询问", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                Util.LogFile.DeleteFile();
+                Application.Exit();
+            }
+        }
+
 
         private void SwitchStatus(bool isStart)
         {
@@ -113,14 +119,7 @@ namespace THOK.AS.Stocking.View
             btnSimulate.Enabled = !isStart;
         }
 
-        private void btnSimulate_Click(object sender, EventArgs e)
-        {
-            Context.ProcessDispatcher.WriteToProcess("DataRequestProcess", "StockInRequest", 1);
-        }
 
-        /// <summary>
-        /// 下载数据 最后修改日期 2010-10-30
-        /// </summary>
         private void DownloadData()
         {
             try
@@ -179,7 +178,7 @@ namespace THOK.AS.Stocking.View
                             Logger.Info(string.Format(dataAndTip,orderDate,batchNo,totalQuantity));
 
                             //初始化PLC数据（叠垛线PLC，补货线PLC）
-                            Context.ProcessDispatcher.WriteToService("StockPLC_01", "RestartData", 3);
+                            Context.ProcessDispatcher.WriteToService("StockPLC", "RestartData", 3);
                             //初始化入库扫码器
                             Context.ProcessDispatcher.WriteToProcess("ScanProcess", "Init", null);
                             //初始化状态管理器
@@ -199,6 +198,7 @@ namespace THOK.AS.Stocking.View
                 Logger.Error("数据下载处理失败，原因：" + e.Message);
             }
         }
+
 
         public delegate void ProcessStateInMainThread(StateItem stateItem);
 
