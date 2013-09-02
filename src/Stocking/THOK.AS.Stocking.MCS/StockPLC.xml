@@ -1,0 +1,107 @@
+﻿<?xml version='1.0' ?>
+<Config>
+  <OPCServer ConnectionString="RSLinx OPC Server">
+    <OPCGroup GroupName="DefaultGroup" GroupString="[QDN_BH]" UpdateRate="350">
+      <!--清空数据-->
+      <OPCItem ItemName="RestartData" ClientHandler="1" OPCItemName="OPC_SWAP.Data_Clear"  ItemType="WRITE"/>
+      
+      <!--补货请求-->
+      <!--1号线-->
+      <OPCItem ItemName="01_1_3" ClientHandler="17" OPCItemName="OPC_SWAP.Request_01_T" ItemType="READ"/>
+      <OPCItem ItemName="01_1_2" ClientHandler="19" OPCItemName="OPC_SWAP.Request_01_L" ItemType="READ"/>
+      <!--2号线-->
+      <OPCItem ItemName="02_1_3" ClientHandler="21" OPCItemName="OPC_SWAP.Request_02_T" ItemType="READ"/>
+      <OPCItem ItemName="02_1_2" ClientHandler="23" OPCItemName="OPC_SWAP.Request_02_L" ItemType="READ"/>
+      
+      <!--订单-->
+      <OPCItem ItemName="01_OrderDataMoveNext" ClientHandler="1" OPCItemName="OPC_SWAP.Request_order" ItemType="READ"/>
+      <OPCItem ItemName="01_OrderDataMoveTo" ClientHandler="2" OPCItemName="OPC_SWAP.Correction_order" ItemType="READ"/>
+      <OPCItem ItemName="01_ReleaseOrder" ClientHandler="3" OPCItemName="OPC_SWAP.Correction_Over" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData0" ClientHandler="4" OPCItemName="OPC_Out_Data[0]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData1" ClientHandler="5" OPCItemName="OPC_Out_Data[1]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData2" ClientHandler="6" OPCItemName="OPC_Out_Data[2]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData3" ClientHandler="7" OPCItemName="OPC_Out_Data[3]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData4" ClientHandler="8" OPCItemName="OPC_Out_Data[4]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData5" ClientHandler="9" OPCItemName="OPC_Out_Data[5]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData6" ClientHandler="10" OPCItemName="OPC_Out_Data[6]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData7" ClientHandler="11" OPCItemName="OPC_Out_Data[7]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData8" ClientHandler="12" OPCItemName="OPC_Out_Data[8]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData9" ClientHandler="13" OPCItemName="OPC_Out_Data[9]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData10" ClientHandler="14" OPCItemName="OPC_Out_Data[10]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData11" ClientHandler="15" OPCItemName="OPC_Out_Data[11]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData12" ClientHandler="16" OPCItemName="OPC_Out_Data[12]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData13" ClientHandler="17" OPCItemName="OPC_Out_Data[13]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData14" ClientHandler="18" OPCItemName="OPC_Out_Data[14]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData15" ClientHandler="19" OPCItemName="OPC_Out_Data[15]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData16" ClientHandler="20" OPCItemName="OPC_Out_Data[16]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData17" ClientHandler="21" OPCItemName="OPC_Out_Data[17]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData18" ClientHandler="22" OPCItemName="OPC_Out_Data[18]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData19" ClientHandler="23" OPCItemName="OPC_Out_Data[19]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData20" ClientHandler="24" OPCItemName="OPC_Out_Data[20]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData21" ClientHandler="25" OPCItemName="OPC_Out_Data[21]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData22" ClientHandler="26" OPCItemName="OPC_Out_Data[22]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData23" ClientHandler="27" OPCItemName="OPC_Out_Data[23]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData24" ClientHandler="28" OPCItemName="OPC_Out_Data[24]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData25" ClientHandler="29" OPCItemName="OPC_Out_Data[25]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData26" ClientHandler="30" OPCItemName="OPC_Out_Data[26]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData27" ClientHandler="31" OPCItemName="OPC_Out_Data[27]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData28" ClientHandler="32" OPCItemName="OPC_Out_Data[28]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData29" ClientHandler="33" OPCItemName="OPC_Out_Data[29]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData30" ClientHandler="34" OPCItemName="OPC_Out_Data[30]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData31" ClientHandler="35" OPCItemName="OPC_Out_Data[31]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData32" ClientHandler="36" OPCItemName="OPC_Out_Data[32]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData33" ClientHandler="37" OPCItemName="OPC_Out_Data[33]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData34" ClientHandler="38" OPCItemName="OPC_Out_Data[34]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData35" ClientHandler="39" OPCItemName="OPC_Out_Data[35]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData36" ClientHandler="40" OPCItemName="OPC_Out_Data[36]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData37" ClientHandler="41" OPCItemName="OPC_Out_Data[37]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData38" ClientHandler="42" OPCItemName="OPC_Out_Data[38]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData39" ClientHandler="43" OPCItemName="OPC_Out_Data[39]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData40" ClientHandler="44" OPCItemName="OPC_Out_Data[40]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData41" ClientHandler="45" OPCItemName="OPC_Out_Data[41]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData42" ClientHandler="46" OPCItemName="OPC_Out_Data[42]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData43" ClientHandler="47" OPCItemName="OPC_Out_Data[43]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData44" ClientHandler="48" OPCItemName="OPC_Out_Data[44]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData45" ClientHandler="49" OPCItemName="OPC_Out_Data[45]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData46" ClientHandler="50" OPCItemName="OPC_Out_Data[46]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData47" ClientHandler="51" OPCItemName="OPC_Out_Data[47]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData48" ClientHandler="52" OPCItemName="OPC_Out_Data[48]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData49" ClientHandler="53" OPCItemName="OPC_Out_Data[49]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData50" ClientHandler="54" OPCItemName="OPC_Out_Data[50]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData51" ClientHandler="55" OPCItemName="OPC_Out_Data[51]" ItemType="WRITE"/>
+      <OPCItem ItemName="01_OrderData52" ClientHandler="56" OPCItemName="OPC_Out_Data[52]" ItemType="WRITE"/>
+      <!--扫码器-->
+      <!--1号-->
+      <OPCItem ItemName="01_ScannerMoveNext" ClientHandler="57" OPCItemName="OPC_SWAP.Request_Reset_1" ItemType="READ"/>
+      <OPCItem ItemName="01_ScannerShowData" ClientHandler="58" OPCItemName="OPC_SWAP.Data_Display_1" ItemType="READ"/>
+      <OPCItem ItemName="01_ScannerMoveTo" ClientHandler="59" OPCItemName="OPC_SWAP.Correction_Data_1" ItemType="READ"/>
+      <OPCItem ItemName="01_ReleaseScanner_1" ClientHandler="60" OPCItemName="OPC_SWAP.Address_Data_1" ItemType="WRITE"/>
+      <OPCItem ItemName="01_ReleaseScanner_1" ClientHandler="61" OPCItemName="OPC_SWAP.Serial_Number_1" ItemType="WRITE"/>
+      <!--2号-->
+      <OPCItem ItemName="02_ScannerMoveNext" ClientHandler="62" OPCItemName="OPC_SWAP.Request_Reset_2" ItemType="READ"/>
+      <OPCItem ItemName="02_ScannerShowData" ClientHandler="63" OPCItemName="OPC_SWAP.Data_Display_2" ItemType="READ"/>
+      <OPCItem ItemName="02_ScannerMoveTo" ClientHandler="64" OPCItemName="OPC_SWAP.Correction_Data_2" ItemType="READ"/>
+      <OPCItem ItemName="02_ReleaseScanner_1" ClientHandler="65" OPCItemName="OPC_SWAP.Address_Data_2" ItemType="WRITE"/>
+      <OPCItem ItemName="02_ReleaseScanner_2" ClientHandler="66" OPCItemName="OPC_SWAP.Serial_Number_2" ItemType="WRITE"/>
+
+      <!--LED部分-->
+      <!--1号-->
+      <OPCItem ItemName="01_LedMoveNext" ClientHandler="67" OPCItemName="DB1,INT120,1" ItemType="READ"/>
+      <OPCItem ItemName="01_LedMoveTo" ClientHandler="68" OPCItemName="DB1,INT124,1" ItemType="READ"/>
+      <OPCItem ItemName="01_LedShowData" ClientHandler="69" OPCItemName="DB1,INT122,1" ItemType="READ"/>
+      <OPCItem ItemName="01_ReleaseLed" ClientHandler="70" OPCItemName="DB1,INT126,1" ItemType="WRITE"/>
+      <!--2号-->
+      <OPCItem ItemName="02_LedMoveNext" ClientHandler="71" OPCItemName="DB1,INT130,1" ItemType="READ"/>
+      <OPCItem ItemName="02_LedMoveTo" ClientHandler="72" OPCItemName="DB1,INT134,1" ItemType="READ"/>
+      <OPCItem ItemName="02_LedShowData" ClientHandler="73" OPCItemName="DB1,INT132,1" ItemType="READ"/>
+      <OPCItem ItemName="02_ReleaseLed" ClientHandler="74" OPCItemName="DB1,INT136,1" ItemType="WRITE"/>
+      <!--3号-->
+      <OPCItem ItemName="03_LedMoveNext" ClientHandler="75" OPCItemName="DB1,INT140,1" ItemType="READ"/>
+      <OPCItem ItemName="03_LedMoveTo" ClientHandler="76" OPCItemName="DB1,INT144,1" ItemType="READ"/>
+      <OPCItem ItemName="03_LedShowData" ClientHandler="77" OPCItemName="DB1,INT142,1" ItemType="READ"/>
+      <OPCItem ItemName="03_ReleaseLed" ClientHandler="78" OPCItemName="DB1,INT146,1" ItemType="WRITE"/>
+      
+    </OPCGroup>
+  </OPCServer>
+</Config>
+

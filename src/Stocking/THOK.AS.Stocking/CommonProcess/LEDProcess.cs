@@ -7,7 +7,7 @@ using THOK.Util;
 using THOK.AS.Stocking.Dao;
 using THOK.AS.Stocking.Util.LED2008;
 
-namespace THOK.AS.Stocking.StockInProcess
+namespace THOK.AS.Stocking.CommonProcess
 {
     public class LEDProcess: AbstractProcess
     {
@@ -51,50 +51,13 @@ namespace THOK.AS.Stocking.StockInProcess
 
         protected override void StateChanged(StateItem stateItem, IProcessDispatcher dispatcher)
         {
-            /*  处理事项：
-             *  Init：初始化
-             *  Refresh：刷新LED屏。
-             *      ‘01’：一号屏 显示请求入库托盘信息
-             *      ‘02’：二号屏 显示请求补货的混合烟道补货顺序信息
-             */
-            string cigaretteName = "";
-
-            switch (stateItem.ItemName)
+            if (stateItem.ItemName != string.Empty && stateItem.State is LedItem[])
             {
-                case "Refresh":
-                    this.Refresh();
-                    break;
-                case "StockInRequestShow":
-                    cigaretteName = Convert.ToString(stateItem.State);
-                    this.StockInRequestShow(cigaretteName);
-                    break;
-                default:
-                    if (stateItem.ItemName != string.Empty && stateItem.State is LedItem[])
-                    {
-                        Show(stateItem.ItemName,(LedItem[])stateItem.State);
-                    }                    
-                    break;
-            }        
-        }
-
-        private void Refresh()
-        {
-            //刷新1号屏
-            using (PersistentManager pm = new PersistentManager())
-            {
-                StockInBatchDao stockInBatchDao = new StockInBatchDao();
-                DataTable batchTable = stockInBatchDao.FindStockInTopAnyBatch();
-                ledUtil.RefreshStockInLED(batchTable, "1");
+                Show(stateItem.ItemName, (LedItem[])stateItem.State);
             }
         }
 
-        private void StockInRequestShow(string cigaretteName)
-        {
-            ledUtil.RefreshStockInLED("1",cigaretteName);
-            Logger.Info("缺烟提醒：请入库" + cigaretteName);
-        }
-
-        internal void Show(string ledCode,LedItem[] ledItems)
+        private void Show(string ledCode, LedItem[] ledItems)
         {
             ledUtil.Show(ledCode, ledItems);
         }

@@ -122,7 +122,17 @@ namespace THOK.AS.Stocking.StateManageProcess.Dao
             int[] dataItems = data.ToArray();
             Array.Reverse(dataItems);
 
-            if (dispatcher.WriteToService(plcServicesName, orderItemName,dataItems))
+            bool bResult = true;
+            for (int i = 0; i < dataItems.Length; i++)
+            {
+                bResult = bResult && dispatcher.WriteToService(plcServicesName, orderItemName + i, dataItems[i]);
+                if (!bResult)
+                {
+                    break;
+                }
+            }
+
+            if (bResult)
             {
                 sql = "UPDATE AS_STATEMANAGER_ORDER SET ROW_INDEX = {0} WHERE STATECODE = '{1}'";
                 sql = string.Format(sql, this.index, stateItemCode);
