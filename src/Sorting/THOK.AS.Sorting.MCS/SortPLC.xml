@@ -3,7 +3,7 @@
   <OPCServer ConnectionString="RSLinx OPC Server">
     <OPCGroup GroupName="DefaultGroup" GroupString="[TRY]" UpdateRate="250">
       <!--重新分拣标识位-->
-      <OPCItem ItemName="RestartData" ClientHandler="1" OPCItemName="PC_PLC[0]"  ItemType="READ" />
+      <OPCItem ItemName="RestartData" ClientHandler="1" OPCItemName="PC_PLC[0]"  ItemType="WRITE" />
       <!--设备运行故障位-->
       <OPCItem ItemName="SortStatus" ClientHandler="2" OPCItemName="PC_PLC[3]"  ItemType="READ" />
       <!--设备运行时间位-->
