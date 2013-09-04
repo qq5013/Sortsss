@@ -61,9 +61,13 @@ namespace THOK.AS.Sorting.View
                             data[1] = targetChannelAddress;
                             data[2] = 1;
                             if (Convert.ToInt32(channeltable.Rows[0]["CHANNELGROUP"].ToString()) == 1)
-                                this.mainFrame.Context.ProcessDispatcher.WriteToService("SortPLC", "ChannelChangeDataA", data);
-                            else
-                                this.mainFrame.Context.ProcessDispatcher.WriteToService("SortPLC", "ChannelChangeDataB", data);
+                            {
+                                this.mainFrame.Context.ProcessDispatcher.WriteToService("SortPLC", "ChannelChangeA_From", data[0]);
+                                this.mainFrame.Context.ProcessDispatcher.WriteToService("SortPLC", "ChannelChangeA_To", data[1]);
+                                this.mainFrame.Context.ProcessDispatcher.WriteToService("SortPLC", "ChannelChangeA_Is", 1);
+                            }
+                            //else
+                            //    this.mainFrame.Context.ProcessDispatcher.WriteToService("SortPLC", "ChannelChangeDataB", data);
                             THOK.MCP.Logger.Info(string.Format("{0}线{1}号烟道与{2}号烟道交换！",Convert.ToInt32(channeltable.Rows[0]["CHANNELGROUP"]) == 1?"A":"B", sourceChannelAddress, targetChannelAddress));
                         }
                         DataGridViewAutoFilter.DataGridViewAutoFilterTextBoxColumn.RemoveFilter(dgvMain);

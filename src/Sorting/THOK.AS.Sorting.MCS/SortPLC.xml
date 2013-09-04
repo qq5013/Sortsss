@@ -2,20 +2,20 @@
 <Config>
   <OPCServer ConnectionString="RSLinx OPC Server">
     <OPCGroup GroupName="DefaultGroup" GroupString="[TRY]" UpdateRate="250">
+      <!--重新分拣标识位-->
+      <OPCItem ItemName="RestartData" ClientHandler="1" OPCItemName="PC_PLC[0]"  ItemType="READ" />
+      <!--设备运行故障位-->
+      <OPCItem ItemName="SortStatus" ClientHandler="2" OPCItemName="PC_PLC[3]"  ItemType="READ" />
+      <!--设备运行时间位-->
+      <OPCItem ItemName="SortRunStatus" ClientHandler="3" OPCItemName="PC_PLC[4]" ItemType="READ" />
       <!--订单请求-->
-      <OPCItem ItemName="OrderRequestA" ClientHandler="1" OPCItemName="DATA_REQ[0]" ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="OrderRequestA" ClientHandler="4" OPCItemName="DATA_REQ[0]" ItemType="READ"/>
       <!--完成分拣订单号-->
-      <OPCItem ItemName="CurrentOrderA" ClientHandler="2" OPCItemName="DATA_REQ[1]" ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="CurrentOrderA" ClientHandler="5" OPCItemName="DATA_REQ[1]" ItemType="READ"/>
       <!--订单出错校验-->
-      <OPCItem ItemName="MissOrderA" ClientHandler="3" OPCItemName="DATA_REQ[2]"  ItemType="READ" IsActive="true"/>
+      <OPCItem ItemName="MissOrderA" ClientHandler="6" OPCItemName="DATA_REQ[2]"  ItemType="READ"/>
       <!--少烟烟道-->
-      <OPCItem ItemName="EmptyErrA" ClientHandler="4" OPCItemName="DATA_REQ[3]" ItemType="READ" IsActive="true"/>
-      <!--A线多沟带缓存开始订单号-->
-      <OPCItem ItemName="CacheOrderA_SortNo" ClientHandler="5" OPCItemName="DATA_REQ[5]" ItemType="READ" />
-      <!--A线多沟带缓存总数-->
-      <OPCItem ItemName="CacheOrderA_Total" ClientHandler="6" OPCItemName="DATA_REQ[6]" ItemType="READ" />
-      <!--A线多沟带前端小皮带卷烟数量-->
-      <OPCItem ItemName="CacheOrderA_Front" ClientHandler="7" OPCItemName="DATA_REQ[7]" ItemType="READ" />
+      <OPCItem ItemName="EmptyErrA" ClientHandler="7" OPCItemName="DATA_REQ[3]" ItemType="READ"/>
       <!--A线订单更新流水号-->
       <OPCItem ItemName="UpdateMissOrderA" ClientHandler="8" OPCItemName="DATA_REQ[8]" ItemType="WRITE"/>
       <!--A线交换角色烟道地址-->
@@ -204,92 +204,86 @@
       <OPCItem ItemName="OrderDataA_95" ClientHandler="187" OPCItemName="PC_DATA[95]" ItemType="WRITE"/>
       <OPCItem ItemName="OrderDataA_96" ClientHandler="188" OPCItemName="PC_DATA[96]" ItemType="WRITE"/>
       <!--A线烟仓盘点出烟量集-->
-      <OPCItem ItemName="CheckA_0" ClientHandler="189" OPCItemName="DATA_ATCHECK[0]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_1" ClientHandler="190" OPCItemName="DATA_ATCHECK[1]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_2" ClientHandler="191" OPCItemName="DATA_ATCHECK[2]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_3" ClientHandler="192" OPCItemName="DATA_ATCHECK[3]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_4" ClientHandler="193" OPCItemName="DATA_ATCHECK[4]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_5" ClientHandler="194" OPCItemName="DATA_ATCHECK[5]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_6" ClientHandler="195" OPCItemName="DATA_ATCHECK[6]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_7" ClientHandler="196" OPCItemName="DATA_ATCHECK[7]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_8" ClientHandler="197" OPCItemName="DATA_ATCHECK[8]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_9" ClientHandler="198" OPCItemName="DATA_ATCHECK[9]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_10" ClientHandler="199" OPCItemName="DATA_ATCHECK[10]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_11" ClientHandler="200" OPCItemName="DATA_ATCHECK[11]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_12" ClientHandler="201" OPCItemName="DATA_ATCHECK[12]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_13" ClientHandler="202" OPCItemName="DATA_ATCHECK[13]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_14" ClientHandler="203" OPCItemName="DATA_ATCHECK[14]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_15" ClientHandler="204" OPCItemName="DATA_ATCHECK[15]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_16" ClientHandler="205" OPCItemName="DATA_ATCHECK[16]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_17" ClientHandler="206" OPCItemName="DATA_ATCHECK[17]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_18" ClientHandler="207" OPCItemName="DATA_ATCHECK[18]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_19" ClientHandler="208" OPCItemName="DATA_ATCHECK[19]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_20" ClientHandler="209" OPCItemName="DATA_ATCHECK[20]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_21" ClientHandler="210" OPCItemName="DATA_ATCHECK[21]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_22" ClientHandler="211" OPCItemName="DATA_ATCHECK[22]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_23" ClientHandler="212" OPCItemName="DATA_ATCHECK[23]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_24" ClientHandler="213" OPCItemName="DATA_ATCHECK[24]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_25" ClientHandler="214" OPCItemName="DATA_ATCHECK[25]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_26" ClientHandler="215" OPCItemName="DATA_ATCHECK[26]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_27" ClientHandler="216" OPCItemName="DATA_ATCHECK[27]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_28" ClientHandler="217" OPCItemName="DATA_ATCHECK[28]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_29" ClientHandler="218" OPCItemName="DATA_ATCHECK[29]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_30" ClientHandler="219" OPCItemName="DATA_ATCHECK[30]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_31" ClientHandler="220" OPCItemName="DATA_ATCHECK[31]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_32" ClientHandler="221" OPCItemName="DATA_ATCHECK[32]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_33" ClientHandler="222" OPCItemName="DATA_ATCHECK[33]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_34" ClientHandler="223" OPCItemName="DATA_ATCHECK[34]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_35" ClientHandler="224" OPCItemName="DATA_ATCHECK[35]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_36" ClientHandler="225" OPCItemName="DATA_ATCHECK[36]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_37" ClientHandler="226" OPCItemName="DATA_ATCHECK[37]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_38" ClientHandler="227" OPCItemName="DATA_ATCHECK[38]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_39" ClientHandler="228" OPCItemName="DATA_ATCHECK[39]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_40" ClientHandler="229" OPCItemName="DATA_ATCHECK[40]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_41" ClientHandler="230" OPCItemName="DATA_ATCHECK[41]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_42" ClientHandler="231" OPCItemName="DATA_ATCHECK[42]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_43" ClientHandler="232" OPCItemName="DATA_ATCHECK[43]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_44" ClientHandler="233" OPCItemName="DATA_ATCHECK[44]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_45" ClientHandler="234" OPCItemName="DATA_ATCHECK[45]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_46" ClientHandler="235" OPCItemName="DATA_ATCHECK[46]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_47" ClientHandler="236" OPCItemName="DATA_ATCHECK[47]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_48" ClientHandler="237" OPCItemName="DATA_ATCHECK[48]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_49" ClientHandler="238" OPCItemName="DATA_ATCHECK[49]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_50" ClientHandler="239" OPCItemName="DATA_ATCHECK[50]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_51" ClientHandler="240" OPCItemName="DATA_ATCHECK[51]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_52" ClientHandler="241" OPCItemName="DATA_ATCHECK[52]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_53" ClientHandler="242" OPCItemName="DATA_ATCHECK[53]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_54" ClientHandler="233" OPCItemName="DATA_ATCHECK[54]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_55" ClientHandler="244" OPCItemName="DATA_ATCHECK[55]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_56" ClientHandler="245" OPCItemName="DATA_ATCHECK[56]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_57" ClientHandler="246" OPCItemName="DATA_ATCHECK[57]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_58" ClientHandler="247" OPCItemName="DATA_ATCHECK[58]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_59" ClientHandler="248" OPCItemName="DATA_ATCHECK[59]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_60" ClientHandler="249" OPCItemName="DATA_ATCHECK[60]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_61" ClientHandler="250" OPCItemName="DATA_ATCHECK[61]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_62" ClientHandler="251" OPCItemName="DATA_ATCHECK[62]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_63" ClientHandler="252" OPCItemName="DATA_ATCHECK[63]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_64" ClientHandler="253" OPCItemName="DATA_ATCHECK[64]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_65" ClientHandler="254" OPCItemName="DATA_ATCHECK[65]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_66" ClientHandler="255" OPCItemName="DATA_ATCHECK[66]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_67" ClientHandler="256" OPCItemName="DATA_ATCHECK[67]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_68" ClientHandler="257" OPCItemName="DATA_ATCHECK[68]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_69" ClientHandler="258" OPCItemName="DATA_ATCHECK[69]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_70" ClientHandler="259" OPCItemName="DATA_ATCHECK[70]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_71" ClientHandler="260" OPCItemName="DATA_ATCHECK[71]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_72" ClientHandler="261" OPCItemName="DATA_ATCHECK[72]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_73" ClientHandler="262" OPCItemName="DATA_ATCHECK[73]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_74" ClientHandler="263" OPCItemName="DATA_ATCHECK[74]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_75" ClientHandler="264" OPCItemName="DATA_ATCHECK[75]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_76" ClientHandler="265" OPCItemName="DATA_ATCHECK[76]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_77" ClientHandler="266" OPCItemName="DATA_ATCHECK[77]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_78" ClientHandler="267" OPCItemName="DATA_ATCHECK[78]"  ItemType="READ"/>
-      <OPCItem ItemName="CheckA_79" ClientHandler="268" OPCItemName="DATA_ATCHECK[79]"  ItemType="READ"/>
-      <!--重新分拣标识位-->
-      <OPCItem ItemName="RestartData" ClientHandler="269" OPCItemName="PC_PLC[0]"  ItemType="READ" />
-      <!--设备运行故障位-->
-      <OPCItem ItemName="SortStatus" ClientHandler="270" OPCItemName="PC_PLC[3]"  ItemType="READ" />
-      <!--设备运行时间位-->
-      <OPCItem ItemName="SortRunStatus" ClientHandler="271" OPCItemName="PC_PLC[4]" ItemType="READ" />
+      <OPCItem ItemName="CheckA_0" ClientHandler="189" OPCItemName="DATA_ATCHECK[0]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_1" ClientHandler="190" OPCItemName="DATA_ATCHECK[1]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_2" ClientHandler="191" OPCItemName="DATA_ATCHECK[2]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_3" ClientHandler="192" OPCItemName="DATA_ATCHECK[3]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_4" ClientHandler="193" OPCItemName="DATA_ATCHECK[4]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_5" ClientHandler="194" OPCItemName="DATA_ATCHECK[5]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_6" ClientHandler="195" OPCItemName="DATA_ATCHECK[6]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_7" ClientHandler="196" OPCItemName="DATA_ATCHECK[7]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_8" ClientHandler="197" OPCItemName="DATA_ATCHECK[8]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_9" ClientHandler="198" OPCItemName="DATA_ATCHECK[9]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_10" ClientHandler="199" OPCItemName="DATA_ATCHECK[10]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_11" ClientHandler="200" OPCItemName="DATA_ATCHECK[11]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_12" ClientHandler="201" OPCItemName="DATA_ATCHECK[12]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_13" ClientHandler="202" OPCItemName="DATA_ATCHECK[13]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_14" ClientHandler="203" OPCItemName="DATA_ATCHECK[14]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_15" ClientHandler="204" OPCItemName="DATA_ATCHECK[15]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_16" ClientHandler="205" OPCItemName="DATA_ATCHECK[16]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_17" ClientHandler="206" OPCItemName="DATA_ATCHECK[17]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_18" ClientHandler="207" OPCItemName="DATA_ATCHECK[18]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_19" ClientHandler="208" OPCItemName="DATA_ATCHECK[19]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_20" ClientHandler="209" OPCItemName="DATA_ATCHECK[20]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_21" ClientHandler="210" OPCItemName="DATA_ATCHECK[21]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_22" ClientHandler="211" OPCItemName="DATA_ATCHECK[22]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_23" ClientHandler="212" OPCItemName="DATA_ATCHECK[23]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_24" ClientHandler="213" OPCItemName="DATA_ATCHECK[24]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_25" ClientHandler="214" OPCItemName="DATA_ATCHECK[25]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_26" ClientHandler="215" OPCItemName="DATA_ATCHECK[26]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_27" ClientHandler="216" OPCItemName="DATA_ATCHECK[27]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_28" ClientHandler="217" OPCItemName="DATA_ATCHECK[28]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_29" ClientHandler="218" OPCItemName="DATA_ATCHECK[29]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_30" ClientHandler="219" OPCItemName="DATA_ATCHECK[30]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_31" ClientHandler="220" OPCItemName="DATA_ATCHECK[31]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_32" ClientHandler="221" OPCItemName="DATA_ATCHECK[32]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_33" ClientHandler="222" OPCItemName="DATA_ATCHECK[33]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_34" ClientHandler="223" OPCItemName="DATA_ATCHECK[34]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_35" ClientHandler="224" OPCItemName="DATA_ATCHECK[35]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_36" ClientHandler="225" OPCItemName="DATA_ATCHECK[36]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_37" ClientHandler="226" OPCItemName="DATA_ATCHECK[37]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_38" ClientHandler="227" OPCItemName="DATA_ATCHECK[38]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_39" ClientHandler="228" OPCItemName="DATA_ATCHECK[39]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_40" ClientHandler="229" OPCItemName="DATA_ATCHECK[40]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_41" ClientHandler="230" OPCItemName="DATA_ATCHECK[41]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_42" ClientHandler="231" OPCItemName="DATA_ATCHECK[42]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_43" ClientHandler="232" OPCItemName="DATA_ATCHECK[43]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_44" ClientHandler="233" OPCItemName="DATA_ATCHECK[44]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_45" ClientHandler="234" OPCItemName="DATA_ATCHECK[45]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_46" ClientHandler="235" OPCItemName="DATA_ATCHECK[46]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_47" ClientHandler="236" OPCItemName="DATA_ATCHECK[47]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_48" ClientHandler="237" OPCItemName="DATA_ATCHECK[48]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_49" ClientHandler="238" OPCItemName="DATA_ATCHECK[49]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_50" ClientHandler="239" OPCItemName="DATA_ATCHECK[50]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_51" ClientHandler="240" OPCItemName="DATA_ATCHECK[51]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_52" ClientHandler="241" OPCItemName="DATA_ATCHECK[52]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_53" ClientHandler="242" OPCItemName="DATA_ATCHECK[53]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_54" ClientHandler="243" OPCItemName="DATA_ATCHECK[54]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_55" ClientHandler="244" OPCItemName="DATA_ATCHECK[55]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_56" ClientHandler="245" OPCItemName="DATA_ATCHECK[56]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_57" ClientHandler="246" OPCItemName="DATA_ATCHECK[57]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_58" ClientHandler="247" OPCItemName="DATA_ATCHECK[58]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_59" ClientHandler="248" OPCItemName="DATA_ATCHECK[59]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_60" ClientHandler="249" OPCItemName="DATA_ATCHECK[60]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_61" ClientHandler="250" OPCItemName="DATA_ATCHECK[61]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_62" ClientHandler="251" OPCItemName="DATA_ATCHECK[62]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_63" ClientHandler="252" OPCItemName="DATA_ATCHECK[63]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_64" ClientHandler="253" OPCItemName="DATA_ATCHECK[64]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_65" ClientHandler="254" OPCItemName="DATA_ATCHECK[65]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_66" ClientHandler="255" OPCItemName="DATA_ATCHECK[66]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_67" ClientHandler="256" OPCItemName="DATA_ATCHECK[67]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_68" ClientHandler="257" OPCItemName="DATA_ATCHECK[68]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_69" ClientHandler="258" OPCItemName="DATA_ATCHECK[69]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_70" ClientHandler="259" OPCItemName="DATA_ATCHECK[70]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_71" ClientHandler="260" OPCItemName="DATA_ATCHECK[71]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_72" ClientHandler="261" OPCItemName="DATA_ATCHECK[72]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_73" ClientHandler="262" OPCItemName="DATA_ATCHECK[73]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_74" ClientHandler="263" OPCItemName="DATA_ATCHECK[74]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_75" ClientHandler="264" OPCItemName="DATA_ATCHECK[75]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_76" ClientHandler="265" OPCItemName="DATA_ATCHECK[76]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_77" ClientHandler="266" OPCItemName="DATA_ATCHECK[77]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_78" ClientHandler="267" OPCItemName="DATA_ATCHECK[78]"  ItemType="READ" IsActive="false"/>
+      <OPCItem ItemName="CheckA_79" ClientHandler="268" OPCItemName="DATA_ATCHECK[79]"  ItemType="READ" IsActive="false"/>
     </OPCGroup>
   </OPCServer>
 </Config>
